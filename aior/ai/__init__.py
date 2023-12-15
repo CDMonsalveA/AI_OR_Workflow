@@ -19,28 +19,3 @@
     Artificial Neural Network: general structure for a neural network \
         with n layers and m neurons
 """
-import pandas as pd
-
-def zero_r(train: pd.DataFrame, target: str, test=None, show_accuracy=False):
-    """
-    Zero Rule Algorithm for classification
-
-    Parameters
-    ----------
-    train: pandas DataFrame
-        training set
-    target: str
-        target variable
-    test: pandas DataFrame
-        test set, if None, returns the accuracy with the training set
-    show_accuracy: bool
-        if True, returns the accuracy of the prediction
-
-    Returns
-    -------
-    prediction:
-        prediction for the target variable
-    accuracy: float
-        accuracy of the prediction if show_accuracy is True
-    """
-    

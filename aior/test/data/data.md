@@ -41,6 +41,19 @@ Los elementos marcados en <a style='color:red'>rojo</a> son los que se utilizar�
 
 Con estos nombres, se extrae la latitud y longitud de cada municipio utilizando la API de [Open Street Map](https://nominatim.openstreetmap.org/ui/search.html). Usando como parametro de busqueda la cadena de texto '*string*' `municipio, departamento, pais`.
 
+Casos especiales: (que por errores de escritura en la base de datos no se encuentran en la API de Open Street Map)
+
+- Dibula, La Guajira, Colombia -> Dibulla, La Guajira, Colombia
+- Tolú Viejo, Sucre, Colombia -> Tolúviejo, Sucre, Colombia
+- San Juan de Río Seco, Cundinamarca, Colombia -> San Juan de Ríoseco, Cundinamarca, Colombia
+- San Luis de Gaceno, Casanare, Colombia -> San Luis de Gaceno, <a style='color:red'> Boyacá </a>, Colombia
+> **Nota:** Se Obta por San Luis de Gaceno, Boyacá, Colombia, dado que San Luis de Gaceno, Casanare, Colombia no se encuentra, y San Luis de Gaceno, Boyacá, Colombia es el municipio más cercano.
+- Villa de San Diego de Ubate, Cundinamarca, Colombia -> Ubaté, Provincia de Ubaté, Colombia
+- El Cantón del San Pablo, Chocó, Colombia -> El Cantón de San Pablo, Chocó, Colombia
+- Valle de Guamez, Putumayo, Colombia -> Valle Del Guamuez, Putumayo, Colombia
+- San Pablo de Borbur, Bolívar, Colombia -> San Pablo de Borbur, Boyaca, Colombia o San Pablo, Bolívar, Colombia
+> **Nota:** Se Obta por San Pablo, Bolívar, Colombia, dado que San Pablo de Borbur, Boyaca, Colombia ya se encuentra en la base de datos.
+- San Andrés de Tumaco, Nariño, Colombia -> Tumaco, Nariño, Colombia
 
 
 

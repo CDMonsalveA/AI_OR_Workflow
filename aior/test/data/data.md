@@ -44,6 +44,7 @@ Para esto se encontró la siguiente información disponible en las bases de dato
     - Costo de transporte entre los municipios de Colombia.  [Ministerio de Transporte](https://www.mintransporte.gov.co/publicaciones/4462/sice-tac/).
 
 ---
+>[!NOTE]
 >Los elementos marcados en <a style='color:red'>rojo</a> son los que se consideran claves para la construcción de una red de distribución.<br>
 Con <a style='color:blue'>azul</a> se marcan los elementos que se utilizarán para enlazar las bases de datos, haciendo más comodo tener un id único para cada municipio preestablecido por el DANE.
 
@@ -51,12 +52,31 @@ Con <a style='color:blue'>azul</a> se marcan los elementos que se utilizarán pa
 
 Se considera que cualquier área poblada registrada por el DANE puede ser un centro de distribución, por lo tanto, se considera que los municipios de Colombia son los posibles puntos claves a determinar, para esto es importante tenerlos indexados, identificados y con sus coordenadas geográficas.
 
-En Colombia se reconocen actualmente 1123 municipios ([Datos Abiertos Colombia](https://www.datos.gov.co/Mapas-Nacionales/Departamentos-y-municipios-de-Colombia/xdk5-pm3f/about_data)), para todos estos se requiere conocer los datos de región, departamento, municipio, latitud y longitud. Es decir, una base de datos con la siguiente forma:
+### Municipios de Colombia
+
+En Colombia se reconocen actualmente 1123 municipios ([Datos Abiertos Colombia](https://www.datos.gov.co/Mapas-Nacionales/Departamentos-y-municipios-de-Colombia/xdk5-pm3f/about_data)), [Aquí](https://www.datos.gov.co/resource/gdxc-w37w.json) y [Aquí](https://www.datos.gov.co/resource/xdk5-pm3f.json) se encuentran los enlaces a las API's con la información de los municipios de Colombia. para todos estos se requiere conocer los datos de región, departamento, municipio, latitud y longitud. Es decir, una base de datos con la siguiente forma:
 
 | <a style='color:red'>id</a> | Región | Departamento | Municipio | <a style='color:blue'>Latitud</a> | <a style='color:blue'>Longitud</a> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | ##### | "#####" | "#####" | "#####" | ##### | ##### |
 
+Para obtener esta estructura se utiliza la API de [Datos Abiertos Colombia](https://www.datos.gov.co/Mapas-Nacionales/Departamentos-y-municipios-de-Colombia/xdk5-pm3f/about_data), que contiene la información de los municipios de Colombia, para extraerlos, se usa la librería `requests` `sodapy` y `pandas` de python.
+
+>[!NOTE]
+>En los datos se encuentra que existe perdida en la información de `id=c_digo_dane_del_departamento`, por la existencia de 0 a izquierda y derecha, que se corrige añadiendo a izquierda y posteriormente a derecha uno o dos ceros hasta que se tenga el código completo de 5 dígitos. (se realizó una comprobación de esto con una muestra de 100 departamentos y municipios, y se encontró que todos los códigos de departamento y municipio se encuentran completos).
+
+
+
+
+### Costos de Instalación
+
+Para la construcción de una instalación se requiere de un costo de instalación, que se asume que es proporcional a la capacidad de la instalación. Es decir, a mayor capacidad de la instalación, mayor costo de instalación.
+
+<!-- TODO: #13 Añadir los costos de Instalación -->
+
+### Capacidades de las Instalaciones
+
+Para la construcción de una instalación se requiere de una capacidad de almacenamiento, que se asume que es proporcional a la capacidad de la instalación. Es decir, a mayor capacidad de la instalación, mayor costo de instalación.
 
 ## Orígenes
 

@@ -13,6 +13,8 @@ Operations Research (OR) is the discipline of applying advanced analytical metho
 - **Problem structuring and abstraction**: using models to understand and analyze specific situations and to communicate the essence of complex systems.
 - **Optimization**: using mathematical techniques to identify the best decisions.
 
+> [!NOTE]
+> The following models are formulated using the premise that the demand must be satisfied independently of the availability of the supply.
 # UFLP (Uncapacitated Facility Location Problem)
 - [UFLP](https://en.wikipedia.org/wiki/Facility_location_problem#Uncapacitated_facility_location_problem_(UFLP))
 - [UFLP formulation](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119584445)

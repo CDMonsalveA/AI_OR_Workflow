@@ -181,5 +181,3 @@ $$ w_{ikl} \geq 0 \quad \forall i \in I, k \in K, l \in L $$
 # References
 
 - [Operations Research Models and Methods](https://www.wiley.com/en-us/Operations+Research+Models+and+Methods%3A+With+Excel+Tools%2C+2nd+Edition-p-9781119495173)
-
-

@@ -1,7 +1,5 @@
 # Manejo de Datos
 
-
-
 > **Nota:** Esta sección está en construcción.
 
 Los datos utilizados para la generación del testeo de la librería se encuentran en la carpeta `aior/test/data/`. Adicionalmente, los datos provienen de las API's de [Datos Abiertos Colombia](https://www.datos.gov.co/), los microdatos del [DANE](https://microdatos.dane.gov.co/index.php/catalog/central/about), [Unidad de Planificación Rural Agropecuaria - UPRA Colombia](https://upra.gov.co/en), [Open Street Map](https://nominatim.openstreetmap.org/ui/search.html), [Google Maps](https://www.google.com/maps/), [OSRM](http://project-osrm.org/), [GeoPandas](https://geopandas.org/), [GeoPy](https://geopy.readthedocs.io/en/stable), [GeoNames](https://www.geonames.org/) y finalmente, información de  [Wikipedia](https://www.wikipedia.org/) y [2016 European Guidelines on cardiovascular disease prevention in clinical practice](https://doi.org/10.1093/eurheartj/ehw106).

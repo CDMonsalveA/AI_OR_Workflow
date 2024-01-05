@@ -153,20 +153,33 @@ $$ \min \sum_{j \in J} f_{j} x_{j} + \sum_{k \in K} g_{k} z_{k} + \sum_{l \in L}
 
 ### Constraints
 the demand of customer $i$ for product $l$ must be satisfied by the DCs.
+
 $$ \sum_{j \in J} y_{ijl} = h_{il} \quad \forall i \in I, l \in L $$
+
 the capacity of the DCs must not be exceeded.
+
 $$ \sum_{i \in I} s_{l} y_{ijl} \leq v_{j} x_{j} \quad \forall j \in J, l \in L $$
+
 the input and output of the DCs must be balanced.
+
 $$ \sum_{i \in I} y_{ijl} = \sum_{k \in K} w_{ikl} \quad \forall j \in J, l \in L $$
+
 the capacity of the plants must not be exceeded.
+
 $$ \sum_{j \in J} s_{l} w_{ikl} \leq b_{k} z_{k} \quad \forall k \in K, l \in L $$
+
 logical constraints
+
 $$ x_{j} \in \{0, 1\} \quad \forall j \in J $$
+
 $$ z_{k} \in \{0, 1\} \quad \forall k \in K $$
+
 $$ y_{ijl} \geq 0 \quad \forall i \in I, j \in J, l \in L $$
+
 $$ w_{ikl} \geq 0 \quad \forall i \in I, k \in K, l \in L $$
 
 # References
 
+- [Operations Research Models and Methods](https://www.wiley.com/en-us/Operations+Research+Models+and+Methods%3A+With+Excel+Tools%2C+2nd+Edition-p-9781119495173)
 
 

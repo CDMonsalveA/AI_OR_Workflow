@@ -51,10 +51,15 @@ facilities to customers. The UFLP is a combinatorial optimization problem. It is
 $$ \min \sum_{j \in J} f_j x_j + \sum_{i \in I} \sum_{j \in J} h_{i} c_{ij} y_{ij} $$
 ### Constraints
 the total of $y_{ij}$ used to serve customer $i$ must be equal to 1 to satisfy the demand of customer $i$.
+
 $$ \sum_{j \in J} y_{ij} = 1 \quad \forall i \in I $$
+
 Each facility $j$ can only serve customers if it is opened.
+
 $$ y_{ij} \leq x_j \quad \forall i \in I, j \in J $$
+
 logical constraints
+
 $$ x_j \in \{0, 1\} \quad \forall j \in J $$
 $$ y_{ij} \geq 0 \quad \forall i \in I, j \in J $$
 
@@ -85,16 +90,27 @@ The capacitated facility location problem (CFLP) is a classical combinatorial op
 $$ \min \sum_{j \in J} f_j x_j + \sum_{i \in I} \sum_{j \in J} h_{i} c_{ij} y_{ij} $$
 ### Constraints
 the total of $y_{ij}$ used to serve customer $i$ must be equal to 1 to satisfy the demand of customer $i$.
+
 $$ \sum_{j \in J} y_{ij} = 1 \quad \forall i \in I $$
+
 Each facility $j$ can only serve customers if it is opened.
+
 $$ y_{ij} \leq x_j \quad \forall i \in I, j \in J $$
+
 the annual demand of the customers served by facility $j$ must not exceed the capacity of facility $j$.
+
 $$ \sum_{i \in I} h_i y_{ij} \leq v_j \quad \forall j \in J $$
+
 logical constraints
+
 $$ x_j \in \{0, 1\} \quad \forall j \in J $$
+
 $$ y_{ij} \geq 0 \quad \forall i \in I, j \in J $$
+
 Optional constraints
+
 $$ \sum_{j \in J} v_j x_j \leq \sum_{i \in I} h_i $$
+
 > the total capacity of the opened facilities is sufficient to serve all the customers. Is redundant but tightens the formulation.
 
 # Three-echelon supply chain network design
@@ -151,6 +167,6 @@ $$ y_{ijl} \geq 0 \quad \forall i \in I, j \in J, l \in L $$
 $$ w_{ikl} \geq 0 \quad \forall i \in I, k \in K, l \in L $$
 
 # References
-- [Lawrence .V Snyder, Zuo-Jun Max Shen "Fundamentals of Supply Chain Theory" 28 June 2019](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119584445)
+
 
 

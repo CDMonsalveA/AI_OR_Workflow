@@ -75,7 +75,6 @@ class UFLP:
         -------
         solution_by_pulp: dict
         """
-        print("loading data...")
         # Create the model
         model = LpProblem(name="UFLP", sense=LpMinimize)
 
@@ -106,34 +105,42 @@ class UFLP:
         self.x = x
         self.y = y
 
-    def solve_by_pulp(self):
+    def solve_by_pulp(self, time_limit=10*60, msg=1):
         """
         Solve the UFLP by Pulp
         """
         model = self.pulp_model
-        x = self.x
-        y = self.y
+        # x = self.x # pylint: disable=unused-variable
+        # y = self.y # pylint: disable=unused-variable
         
 
         # Solve the problem
-        model.solve(PULP_CBC_CMD(timeLimit=10*60, msg=1))
+        model.solve(PULP_CBC_CMD(msg=msg, timeLimit=time_limit))
+    def get_solution_by_pulp(self):
+        """
+        Get the solution of the UFLP by Pulp
+        """
+        x = self.x
+        y = self.y
 
-        # Get the results
+        # Save the solution
         solution_by_pulp = {
-            "x": {j: x[j].value() for j in range(self.J)},
-            "y": {(i, j): y[i, j].value() for i in range(self.I) for j in range(self.J)},
+            "x": {j: value(x[j]) for j in range(self.J)},
+            "y": {(i, j): value(y[i, j]) for i in range(self.I) for j in range(self.J)},
         }
         self.solution_by_pulp = solution_by_pulp
         return solution_by_pulp
     
 def main():
-    i = 100
-    j = 1000
+    i = 1123
+    j = 1123
     hi = np.random.randint(1, 10, size=i)
     cij = np.random.randint(1, 10, size=(i,j))
     fj = np.random.randint(1, 10, size=j)
     uflp = UFLP(hi, cij, fj)
-    solution_by_pulp = uflp.solve_by_pulp()
+    uflp.load_to_pulp()
+    uflp.solve_by_pulp(time_limit=54*60, msg=1)
+    solution_by_pulp = uflp.get_solution_by_pulp()
 
     print( type(solution_by_pulp), type(hi), type(cij), type(fj) )
     print("Solution by Pulp:")

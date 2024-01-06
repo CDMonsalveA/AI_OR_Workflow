@@ -5,7 +5,6 @@ import pandas as pd
 from pulp import *
 from mealpy import GA
 
-
 class UFLP:
     """
     Uncapacitated Facility Location Problem
@@ -46,6 +45,7 @@ class UFLP:
     y_ij >= 0 for all i in I, j in J
 
     References
+    ----------
     - [Lawrence .V Snyder, Zuo-Jun Max Shen "Fundamentals of Supply Chain Theory" 28 June 2019]
     (https://onlinelibrary.wiley.com/doi/book/10.1002/9781119584445)
     """
@@ -61,10 +61,13 @@ class UFLP:
         self.f_j = f_j
         self.I = len(h_i)  # pylint: disable=invalid-name
         self.J = len(f_j)  # pylint: disable=invalid-name
-        self.model = None
+        # Pulp variables
+        self.pulp_model = None
+        self.x = None
+        self.y = None
         self.solution_by_pulp = None
 
-    def solve_by_pulp(self):
+    def load_to_pulp(self):
         """
         Solve the UFLP by Pulp
 
@@ -98,7 +101,8 @@ class UFLP:
             for j in range(self.J):
                 model += y[i, j] <= x[j]
 
-        print("solving...")
+        # Save the model
+        self.pulp_model = model
 
         # Solve the problem
         model.solve(PULP_CBC_CMD(timeLimit=10*60, msg=1))

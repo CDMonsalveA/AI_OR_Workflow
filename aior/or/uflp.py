@@ -100,9 +100,20 @@ class UFLP:
         for i in range(self.I):
             for j in range(self.J):
                 model += y[i, j] <= x[j]
-
+        
         # Save the model
         self.pulp_model = model
+        self.x = x
+        self.y = y
+
+    def solve_by_pulp(self):
+        """
+        Solve the UFLP by Pulp
+        """
+        model = self.pulp_model
+        x = self.x
+        y = self.y
+        
 
         # Solve the problem
         model.solve(PULP_CBC_CMD(timeLimit=10*60, msg=1))

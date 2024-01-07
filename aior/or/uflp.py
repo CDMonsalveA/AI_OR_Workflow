@@ -105,9 +105,31 @@ class UFLP:
         self.x = x
         self.y = y
 
-    def solve_by_pulp(self, time_limit=10*60, msg=1):
+    def solve_by_pulp(self,solver):
         """
         Solve the UFLP by Pulp
+
+        Parameters
+        ----------
+        solver: pulp solver
+            any pulp solver, like
+            - PULP_CBC_CMD()
+            - GUROBI_CMD()
+            - CPLEX_CMD()
+            - XPRESS()
+            - COIN_CMD()
+            - CHOCO_CMD()
+            - MIPCL_CMD()
+            - MOSEK()
+            - YAPOSIB()
+            - GLPK_CMD()
+
+        Returns
+        -------
+        solution_by_pulp: dict
+            variable values of the solution
+            - x
+            - y
         """
         model = self.pulp_model
         # x = self.x # pylint: disable=unused-variable
@@ -115,7 +137,7 @@ class UFLP:
         
 
         # Solve the problem
-        model.solve(PULP_CBC_CMD(msg=msg, timeLimit=time_limit))
+        model.solve(solver)
     def get_solution_by_pulp(self):
         """
         Get the solution of the UFLP by Pulp
@@ -131,6 +153,45 @@ class UFLP:
         self.solution_by_pulp = solution_by_pulp
         return solution_by_pulp
     
+    def pulp_solve(self, solver):
+        """
+        Full process of solving the UFLP by Pulp
+
+        Parameters
+        ----------
+        solver: pulp solver
+            any pulp solver, like
+            - PULP_CBC_CMD()
+            - GUROBI_CMD()
+            - CPLEX_CMD()
+            - XPRESS()
+            - COIN_CMD()
+            - CHOCO_CMD()
+            - MIPCL_CMD()
+            - MOSEK()
+            - YAPOSIB()
+            - GLPK_CMD()
+
+        Returns
+        -------
+        solution_by_pulp: dict
+            variable values of the solution
+            - x
+            - y
+        """
+        print("loading to pulp ...")
+        self.load_to_pulp()
+        print("solving by pulp ...")
+        self.solve_by_pulp(solver)
+        print("getting solution by pulp ...")
+        return self.get_solution_by_pulp()
+    
+    def load_to_ga(self):
+        """
+        Load the UFLP to Genetic Algorithm using mealpy
+        """
+        
+    
 def main():
     i = 1123
     j = 1123
@@ -139,13 +200,11 @@ def main():
     fj = np.random.randint(1, 10, size=j)
     uflp = UFLP(hi, cij, fj)
     uflp.load_to_pulp()
-    uflp.solve_by_pulp(time_limit=54*60, msg=1)
+    uflp.solve_by_pulp(PULP_CBC_CMD(msg=1, timeLimit=10*60))
     solution_by_pulp = uflp.get_solution_by_pulp()
 
     print( type(solution_by_pulp), type(hi), type(cij), type(fj) )
     print("Solution by Pulp:")
-    # print("x = ", solution_by_pulp["x"])
-    # print("y = ", solution_by_pulp["y"])
 
     # Check the solution
     print("Check the solution:")

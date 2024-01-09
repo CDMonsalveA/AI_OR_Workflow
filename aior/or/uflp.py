@@ -1,6 +1,5 @@
 """UFLP: Uncapacitated Facility Location Problem"""
 
-import numpy as np
 from pulp import LpProblem, LpMinimize, LpVariable, lpSum, value, PULP_CBC_CMD
 
 class UFLP:
@@ -67,11 +66,7 @@ class UFLP:
 
     def load_to_pulp(self):
         """
-        Solve the UFLP by Pulp
-
-        Returns
-        -------
-        solution_by_pulp: dict
+        Load the UFLP to Pulp
         """
         # Create the model
         model = LpProblem(name="UFLP", sense=LpMinimize)
@@ -122,19 +117,8 @@ class UFLP:
             - YAPOSIB()
             - GLPK_CMD()
 
-        Returns
-        -------
-        solution_by_pulp: dict
-            variable values of the solution
-            - x
-            - y
         """
-        model = self.pulp_model
-        # x = self.x # pylint: disable=unused-variable
-        # y = self.y # pylint: disable=unused-variable
-
-        # Solve the problem
-        model.solve(solver)
+        self.pulp_model.solve(solver=solver)
 
     def get_solution_by_pulp(self):
         """
@@ -151,7 +135,7 @@ class UFLP:
         self.solution_by_pulp = solution_by_pulp
         return solution_by_pulp
 
-    def pulp_solve(self, solver):
+    def pulp_solve(self, solver=PULP_CBC_CMD()):
         """
         Full process of solving the UFLP by Pulp
 
@@ -177,49 +161,12 @@ class UFLP:
             - x
             - y
         """
+        # Check if the parameters are loaded to pulp
+        if self.I is None or self.J is None:
+            raise ValueError("The parameters are not loaded to pulp.")
         print("loading to pulp ...")
         self.load_to_pulp()
         print("solving by pulp ...")
         self.solve_by_pulp(solver)
         print("getting solution by pulp ...")
         return self.get_solution_by_pulp()
-
-    def load_to_ga(self):
-        """
-        Load the UFLP to Genetic Algorithm using mealpy
-        """
-
-
-def main():
-    """Main"""
-    i = 1123
-    j = 1123
-    hi = np.random.randint(1, 10, size=i)
-    cij = np.random.randint(1, 10, size=(i, j))
-    fj = np.random.randint(1, 10, size=j)
-    uflp = UFLP(hi, cij, fj)
-    uflp.load_to_pulp()
-    uflp.solve_by_pulp(PULP_CBC_CMD(msg=1, timeLimit=10 * 60))
-    solution_by_pulp = uflp.get_solution_by_pulp()
-
-    print(type(solution_by_pulp), type(hi), type(cij), type(fj))
-    print("Solution by Pulp:")
-
-    # Check the solution
-    print("Check the solution:")
-    print("sum(y_ij) = ", sum(solution_by_pulp["y"].values()))
-    print(
-        "y_ij <= x_j:",
-        all(
-            solution_by_pulp["y"][i, j] <= solution_by_pulp["x"][j]
-            for i in range(uflp.I)
-            for j in range(uflp.J)
-        ),
-    )
-    print(
-        "x_j in {0, 1}:", all(solution_by_pulp["x"][j] in {0, 1} for j in range(uflp.J))
-    )
-
-
-if __name__ == "__main__":
-    main()

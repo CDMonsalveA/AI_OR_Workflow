@@ -98,7 +98,7 @@ class UFLP:
         self.x = x
         self.y = y
 
-    def solve_by_pulp(self, solver):
+    def solve_by_pulp(self, solver=PULP_CBC_CMD()):
         """
         Solve the UFLP by Pulp
 

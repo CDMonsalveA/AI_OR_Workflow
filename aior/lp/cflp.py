@@ -160,19 +160,3 @@ class CFLP:
         self.solve_by_pulp(solver)
         print("getting the solution...")
         return self.get_solution_by_pulp()
-
-
-cflp = CFLP(
-    h_i=[1000, 1000, 1000, 1000, 1000],
-    c_ij=[
-        [4, 5, 6, 8, 10],
-        [6, 4, 3, 5, 8],
-        [9, 7, 4, 3, 4],
-        [4, 8, 5, 3, 6],
-        [5, 7, 8, 4, 3],
-    ],
-    f_j=[1000, 1000, 1000, 1000, 1000],
-    v_j=[500, 500, 500, 500, 500],
-)
-cflp.pulp_solve()
-print(cflp.solution_by_pulp)

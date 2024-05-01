@@ -2,6 +2,9 @@ asttokens==2.4.1
 attrs==23.1.0
 certifi==2023.11.17
 charset-normalizer==3.3.2
+click==8.1.7
+click-plugins==1.1.1
+cligj==0.7.2
 colorama==0.4.6
 comm==0.2.0
 contourpy==1.2.0
@@ -11,7 +14,9 @@ decorator==5.1.1
 et-xmlfile==1.1.0
 executing==2.0.1
 fastjsonschema==2.19.0
+fiona==1.9.6
 fonttools==4.47.0
+geopandas==0.14.4
 idna==3.6
 ipykernel==6.27.1
 ipython==8.18.1
@@ -42,14 +47,17 @@ PuLP==2.7.0
 pure-eval==0.2.2
 Pygments==2.17.2
 pyparsing==3.1.1
+pyproj==3.6.1
 python-dateutil==2.8.2
 pytz==2023.3.post1
+pywin32==306
 pyzmq==25.1.2
 referencing==0.32.0
 requests==2.31.0
 rpds-py==0.14.1
 scipy==1.11.4
 seaborn==0.13.0
+shapely==2.0.4
 six==1.16.0
 sodapy==2.2.0
 stack-data==0.6.3

@@ -130,6 +130,8 @@ class CFLP:
         Get the solution of the CFLP by Pulp
         """
         self.solution_by_pulp = {
+            "status": self.pulp_model.status,
+            "objective": value(self.pulp_model.objective),
             "x": {j: value(self.x[j]) for j in range(self.J)},
             "y": {
                 (i, j): value(self.y[i, j])

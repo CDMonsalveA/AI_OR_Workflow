@@ -192,6 +192,8 @@ class TELP:
         Get the solution of the Three-echelons location problem by Pulp
         """
         self.solution_by_pulp = {
+            "status": self.pulp_model.status,
+            "objective": value(self.pulp_model.objective),
             "x": {j: value(self.x[j]) for j in range(self.J)},
             "z": {k: value(self.z[k]) for k in range(self.K)},
             "y": {

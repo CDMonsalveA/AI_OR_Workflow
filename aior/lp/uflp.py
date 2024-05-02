@@ -129,8 +129,8 @@ class UFLP:
 
         # Save the solution
         solution_by_pulp = {
-            "status": self.pulp_model.status if self.pulp_model is not None else None,
-            "objective": value(self.pulp_model.objective) if self.pulp_model is not None else None,
+            "status": self.pulp_model.status,
+            "objective": value(self.pulp_model.objective),
             "x": {j: value(x[j]) for j in range(self.J)},
             "y": {(i, j): value(y[i, j]) for i in range(self.I) for j in range(self.J)},
         }

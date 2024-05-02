@@ -76,40 +76,38 @@ class CFLP:
         model = LpProblem(name="CFLP", sense=LpMinimize)
 
         # Initialize the decision variables
-        self.x = {
-            j: LpVariable(name=f"x_{j}", lowBound=0, upBound=1, cat="Integer")
-            for j in range(self.J)
-        }
-        self.y = {
-            (i, j): LpVariable(name=f"y_{i}_{j}", lowBound=0)
+        x = {j: LpVariable(name=f"x{j}", cat="Binary") for j in range(self.J)}
+        y = {
+            (i, j): LpVariable(name=f"y{i}_{j}", lowBound=0)
             for i in range(self.I)
             for j in range(self.J)
         }
 
-        # Set the objective
-        model += lpSum(self.f_j[j] * self.x[j] for j in range(self.J)) + lpSum(
-            self.h_i[i] * self.c_ij[i][j] * self.y[i, j]
+        # Add the objective function to the model
+        model += lpSum(self.f_j[j] * x[j] for j in range(self.J)) + lpSum(
+            self.h_i[i] * self.c_ij[i][j] * y[i, j]
             for i in range(self.I)
             for j in range(self.J)
         )
 
-        # Add constraints
+        # Add constraints to the model
         for i in range(self.I):
-            model += lpSum(self.y[i, j] for j in range(self.J)) == 1
+            model += lpSum(y[i, j] for j in range(self.J)) == 1
         for i in range(self.I):
             for j in range(self.J):
-                model += self.y[i, j] <= self.x[j]
+                model += y[i, j] <= x[j]
         for j in range(self.J):
-            model += (
-                lpSum(self.h_i[i] * self.y[i, j] for i in range(self.I)) <= self.v_j[j]
-            )
+            model += lpSum(self.h_i[i] * y[i, j] for i in range(self.I)) <= self.v_j[j]
+
         # Optional constraint
-        model += lpSum(self.v_j[j] * self.x[j] for j in range(self.J)) <= lpSum(
+        model += lpSum(self.v_j[j] * x[j] for j in range(self.J)) <= lpSum(
             self.h_i[i] for i in range(self.I)
         )
 
         # Save the model
         self.pulp_model = model
+        self.x = x
+        self.y = y
 
     def solve_by_pulp(self, solver=PULP_CBC_CMD()):
         """

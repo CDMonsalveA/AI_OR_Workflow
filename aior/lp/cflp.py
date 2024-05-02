@@ -123,10 +123,6 @@ class CFLP:
         """
         self.pulp_model.solve(solver)
 
-        # Check the status
-        if self.pulp_model.status != 1:
-            raise ValueError("The problem is infeasible.")
-
     def get_solution_by_pulp(self):
         """
         Get the solution of the CFLP by Pulp

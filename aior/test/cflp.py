@@ -92,8 +92,8 @@ cflp.load_to_pulp()
 from pulp import PULP_CBC_CMD # type: ignore
 # Solve the problem showing the log
 cflp.pulp_model.solve(PULP_CBC_CMD(msg=True))
-# print(cflp.pulp_model.objective.value())
-# print(cflp.pulp_model.status)
+print(cflp.pulp_model.objective.value())
+print(cflp.pulp_model.status)
 
 # %%
 #### Save the results
@@ -183,5 +183,3 @@ webbrowser.open_new_tab('cflp-solution.html')
 
 # %% [markdown]
 # ## END
-
-

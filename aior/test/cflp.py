@@ -34,6 +34,11 @@ population = pd.read_csv(os.path.join(current_path, data_path, municipios_filena
 distance_matrix = pd.read_csv(os.path.join(current_path, data_path, distance_matrix_filename),
                               index_col='dpmp') / 1000 # convert to km
 
+n = 200
+population = population.head(n)
+distance_matrix = distance_matrix.iloc[:n, :n]
+
+
 # calculate the population per department = sum of the population of the municipalities in the department placed for each municipality in the department
 population_per_department = population.groupby('c_digo_dane_del_departamento').sum()
 population['population_per_department'] = population['c_digo_dane_del_departamento'].map(population_per_department['2024'])
@@ -91,7 +96,11 @@ cflp.load_to_pulp()
 #### Solving the problem
 from pulp import PULP_CBC_CMD # type: ignore
 # Solve the problem showing the log
-cflp.pulp_model.solve(PULP_CBC_CMD(msg=True))
+cflp.pulp_model.solve(PULP_CBC_CMD(threads=12,
+                                   keepFiles=True,
+                                   logPath='cflp-try.log',
+                                   timeLimit=3600,
+                                   ))
 print(cflp.pulp_model.objective.value())
 print(cflp.pulp_model.status)
 

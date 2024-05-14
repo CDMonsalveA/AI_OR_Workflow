@@ -1,0 +1,55 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - c:\Users\User\OneDrive\1_ Universidad\Trabajo de Grado\1. Proyecto de Grado\2. Expertimentación\AI_OR_Workflow\.venv\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe CFLP-pulp.mps sec 3600 threads 12 timeMode elapsed branch printingOptions all solution CFLP-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 40406 COLUMNS
+At line 241007 RHS
+At line 281409 BOUNDS
+At line 281610 ENDATA
+Problem MODEL has 40401 rows, 40200 columns and 160200 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 3600
+threads was changed from 0 to 12
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 3.7357e+08 - 0.25 seconds
+Cgl0004I processed model has 40401 rows, 40200 columns (200 integer (200 of which binary)) and 160200 elements
+Cbc0038I Initial state - 10 integers unsatisfied sum - 1.63725
+Cbc0038I Pass   1: (5.49 seconds) suminf.    0.00372 (1) obj. 4.67973e+08 iterations 35059
+Cbc0038I Pass   2: (5.63 seconds) suminf.    0.00608 (1) obj. 4.67729e+08 iterations 1748
+Cbc0038I Pass   3: (8.72 seconds) suminf.    0.20305 (1) obj. 2.59983e+09 iterations 10398
+Cbc0038I Pass   4: (8.75 seconds) suminf.    0.20305 (1) obj. 2.59983e+09 iterations 0
+Cbc0038I Pass   5: (10.37 seconds) suminf.    0.06557 (1) obj. 2.52711e+09 iterations 9818
+Cbc0038I Pass   6: (10.50 seconds) suminf.    0.10722 (1) obj. 2.50743e+09 iterations 1647
+Cbc0038I Pass   7: (13.14 seconds) suminf.    0.12117 (1) obj. 2.6007e+09 iterations 9117
+Cbc0038I Pass   8: (14.17 seconds) suminf.    0.00997 (1) obj. 2.5576e+09 iterations 5655
+Cbc0038I Pass   9: (14.49 seconds) suminf.    0.01630 (1) obj. 2.55746e+09 iterations 1590
+Cbc0038I Pass  10: (16.07 seconds) suminf.    0.06381 (1) obj. 2.65858e+09 iterations 5257
+Cbc0038I Pass  11: (16.09 seconds) suminf.    0.06381 (1) obj. 2.65858e+09 iterations 0
+Cbc0038I Pass  12: (18.91 seconds) suminf.    0.07703 (1) obj. 2.60913e+09 iterations 11805
+Cbc0038I Pass  13: (19.13 seconds) suminf.    0.12595 (1) obj. 2.62563e+09 iterations 1739
+Cbc0038I Pass  14: (20.78 seconds) suminf.    0.38134 (2) obj. 2.5998e+09 iterations 5080
+Cbc0038I Pass  15: (21.35 seconds) suminf.    0.03138 (1) obj. 2.63759e+09 iterations 2611
+Cbc0038I Pass  16: (21.57 seconds) suminf.    0.05130 (1) obj. 2.64052e+09 iterations 1559
+Cbc0038I Pass  17: (22.88 seconds) suminf.    0.34465 (1) obj. 2.7254e+09 iterations 3453
+Cbc0038I Pass  18: (23.79 seconds) suminf.    0.02836 (1) obj. 2.75295e+09 iterations 4311
+Cbc0038I Pass  19: (23.97 seconds) suminf.    0.04637 (1) obj. 2.75453e+09 iterations 1607
+Cbc0038I Pass  20: (25.46 seconds) suminf.    0.39413 (1) obj. 2.85073e+09 iterations 4590
+Cbc0038I Pass  21: (26.07 seconds) suminf.    0.03243 (1) obj. 2.81138e+09 iterations 2478
+Cbc0038I Pass  22: (26.26 seconds) suminf.    0.05302 (1) obj. 2.81839e+09 iterations 1719
+Cbc0038I Pass  23: (29.12 seconds) suminf.    0.01338 (1) obj. 2.7798e+09 iterations 8318
+Cbc0038I Pass  24: (29.14 seconds) suminf.    0.01338 (1) obj. 2.7798e+09 iterations 0
+Cbc0038I Pass  25: (31.40 seconds) suminf.    0.08118 (1) obj. 2.69096e+09 iterations 8720
+Cbc0038I Pass  26: (31.61 seconds) suminf.    0.13273 (1) obj. 2.693e+09 iterations 1822
+Cbc0038I Pass  27: (33.14 seconds) suminf.    0.45902 (1) obj. 2.67891e+09 iterations 4455
+Cbc0038I Pass  28: (33.17 seconds) suminf.    0.45902 (1) obj. 2.67891e+09 iterations 0
+Cbc0038I Pass  29: (34.08 seconds) suminf.    0.04451 (1) obj. 2.54239e+09 iterations 3896
+Cbc0038I Pass  30: (34.39 seconds) suminf.    0.07278 (1) obj. 2.56259e+09 iterations 2031
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 145 integers at bound fixed and 37417 continuous
+Cbc0038I Full problem 40401 rows 40200 columns, reduced to 2837 rows 2638 columns
+Cbc0038I Mini branch and bound did not improve solution (36.10 seconds)
+Cbc0038I Full problem 40402 rows 40200 columns, reduced to 40402 rows 40200 columns - too large
+Cbc0038I After 39.42 seconds - Feasibility pu

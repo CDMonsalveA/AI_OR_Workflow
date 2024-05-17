@@ -99,7 +99,7 @@ from pulp import PULP_CBC_CMD # type: ignore
 cflp.pulp_model.solve(PULP_CBC_CMD(threads=12,
                                    keepFiles=True,
                                    logPath='cflp-try.log',
-                                   timeLimit=3600,
+                                   timeLimit=60,
                                    ))
 print(cflp.pulp_model.objective.value())
 print(cflp.pulp_model.status)

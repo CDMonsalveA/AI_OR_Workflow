@@ -1,0 +1,55 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - c:\Users\User\Desktop\AI_OR_Workflow\.venv\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe C:\Users\User\AppData\Local\Temp\c5da8744ea464b9283fa944fb5e57998-pulp.mps sec 300 threads 11 timeMode elapsed branch printingOptions all solution C:\Users\User\AppData\Local\Temp\c5da8744ea464b9283fa944fb5e57998-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 12773 COLUMNS
+At line 100806 RHS
+At line 113575 BOUNDS
+At line 126232 ENDATA
+Problem MODEL has 12768 rows, 12656 columns and 50176 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 300
+threads was changed from 0 to 11
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 22.5379 - 0.58 seconds
+Cgl0004I processed model has 12768 rows, 12656 columns (12656 integer (12656 of which binary)) and 50176 elements
+Cbc0038I Initial state - 1640 integers unsatisfied sum - 120.878
+Cbc0038I Pass   1: (10.80 seconds) suminf.  114.28760 (5126) obj. 53.7061 iterations 14785
+Cbc0038I Pass   2: (11.06 seconds) suminf.  114.30215 (5057) obj. 53.7265 iterations 327
+Cbc0038I Pass   3: (26.44 seconds) suminf.  121.16802 (763) obj. 98.2029 iterations 24323
+Cbc0038I Pass   4: (28.16 seconds) suminf.   76.48014 (2157) obj. 102.673 iterations 4190
+Cbc0038I Pass   5: (28.77 seconds) suminf.   67.21434 (1983) obj. 103.333 iterations 1412
+Cbc0038I Pass   6: (28.85 seconds) suminf.   66.52216 (1978) obj. 103.291 iterations 153
+Cbc0038I Pass   7: (29.10 seconds) suminf.   68.17528 (2038) obj. 103.389 iterations 658
+Cbc0038I Pass   8: (29.16 seconds) suminf.   67.44318 (2031) obj. 103.341 iterations 109
+Cbc0038I Pass   9: (29.24 seconds) suminf.   67.44222 (2030) obj. 103.327 iterations 187
+Cbc0038I Pass  10: (31.52 seconds) suminf.   91.08140 (307) obj. 128.894 iterations 5912
+Cbc0038I Pass  11: (32.26 seconds) suminf.   52.93333 (1294) obj. 119.168 iterations 2329
+Cbc0038I Pass  12: (32.43 seconds) suminf.   48.19166 (1234) obj. 118.878 iterations 470
+Cbc0038I Pass  13: (32.57 seconds) suminf.   53.48641 (1327) obj. 119.343 iterations 397
+Cbc0038I Pass  14: (32.76 seconds) suminf.   49.69058 (1255) obj. 119.184 iterations 415
+Cbc0038I Pass  15: (32.85 seconds) suminf.   51.13866 (1266) obj. 119.321 iterations 225
+Cbc0038I Pass  16: (32.94 seconds) suminf.   48.19295 (1233) obj. 119.857 iterations 260
+Cbc0038I Pass  17: (33.03 seconds) suminf.   50.78140 (1255) obj. 119.576 iterations 239
+Cbc0038I Pass  18: (34.04 seconds) suminf.   70.74159 (260) obj. 138.551 iterations 3338
+Cbc0038I Pass  19: (34.41 seconds) suminf.   39.39275 (685) obj. 136.329 iterations 1485
+Cbc0038I Pass  20: (34.54 seconds) suminf.   34.98162 (594) obj. 135.882 iterations 437
+Cbc0038I Pass  21: (34.60 seconds) suminf.   36.09051 (614) obj. 136.304 iterations 198
+Cbc0038I Pass  22: (34.63 seconds) suminf.   34.68892 (593) obj. 136.392 iterations 121
+Cbc0038I Pass  23: (34.66 seconds) suminf.   33.71346 (613) obj. 136.324 iterations 86
+Cbc0038I Pass  24: (34.71 seconds) suminf.   35.20219 (624) obj. 136.415 iterations 155
+Cbc0038I Pass  25: (34.81 seconds) suminf.   31.74902 (589) obj. 136.512 iterations 328
+Cbc0038I Pass  26: (34.88 seconds) suminf.   35.48191 (637) obj. 136.504 iterations 235
+Cbc0038I Pass  27: (35.23 seconds) suminf.   60.29867 (246) obj. 141.322 iterations 1470
+Cbc0038I Pass  28: (35.50 seconds) suminf.   31.44809 (501) obj. 137.804 iterations 1188
+Cbc0038I Pass  29: (35.56 seconds) suminf.   28.39213 (467) obj. 137.757 iterations 256
+Cbc0038I Pass  30: (35.59 seconds) suminf.   27.66133 (458) obj. 137.648 iterations 80
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 5350 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 12768 rows 12656 columns, reduced to 7418 rows 7306 columns - too large
+Cbc0038I Mini branch and bound did not improve solution (35.77 seconds)
+Cbc0038I After 35.77 seconds - Feasibility pump exiting - took 34.87 seconds
+Cbc0012I Integer solution of 118.85465 found by Dive

@@ -1,0 +1,60 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - c:\Users\User\Desktop\AI_OR_Workflow\.venv\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe C:\Users\User\AppData\Local\Temp\48b66ba542164a68a412807efd27344f-pulp.mps sec 3600 threads 12 timeMode elapsed branch printingOptions all solution C:\Users\User\AppData\Local\Temp\48b66ba542164a68a412807efd27344f-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 12661 COLUMNS
+At line 88150 RHS
+At line 100807 BOUNDS
+At line 113464 ENDATA
+Problem MODEL has 12656 rows, 12656 columns and 37632 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 3600
+threads was changed from 0 to 12
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 21.1272 - 0.18 seconds
+Cgl0004I processed model has 12656 rows, 12656 columns (12656 integer (12656 of which binary)) and 37632 elements
+Cbc0038I Initial state - 0 integers unsatisfied sum - 0
+Cbc0038I Solution found of 21.1272
+Cbc0038I Before mini branch and bound, 12656 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.48 seconds)
+Cbc0038I After 0.48 seconds - Feasibility pump exiting with objective of 21.1272 - took 0.04 seconds
+Cbc0012I Integer solution of 21.127177 found by feasibility pump after 0 iterations and 0 nodes (0.49 seconds)
+Cbc0030I Thread 0 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 4 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 5 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 6 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 7 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 8 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 9 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 10 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 11 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 0 locked, 0 waiting for locks
+Cbc0001I Search completed - best objective 21.12717724770318, took 0 iterations and 0 nodes (0.74 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 21.1272 to 21.1272
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                21.12717725
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.79
+Time (Wallclock seconds):       0.79
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.93   (Wallclock seconds):       0.93
+

@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - c:\Users\User\Desktop\AI_OR_Workflow\.venv\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe C:\Users\User\AppData\Local\Temp\f136464c917c482aafb3ee0b37fb69d6-pulp.mps sec 300 threads 12 timeMode elapsed branch printingOptions all solution C:\Users\User\AppData\Local\Temp\f136464c917c482aafb3ee0b37fb69d6-pulp.sol (default strategy 1)
+command line - c:\Users\User\Desktop\AI_OR_Workflow\.venv\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe C:\Users\User\AppData\Local\Temp\e5a1b59f62b448b08b96d0ddb954ecc1-pulp.mps sec 300 threads 12 timeMode elapsed branch printingOptions all solution C:\Users\User\AppData\Local\Temp\e5a1b59f62b448b08b96d0ddb954ecc1-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 5591 COLUMNS
@@ -19,23 +19,23 @@ Cgl0003I 0 fixed, 0 tightened bounds, 1163 strengthened rows, 0 substitutions
 Cgl0003I 0 fixed, 0 tightened bounds, 1140 strengthened rows, 0 substitutions
 Cgl0004I processed model has 4468 rows, 3351 columns (3351 integer (1117 of which binary)) and 12331 elements
 Cbc0038I Initial state - 1 integers unsatisfied sum - 0.01
-Cbc0038I Pass   1: (0.18 seconds) suminf.    0.00000 (0) obj. 9.37117e+11 iterations 1116
+Cbc0038I Pass   1: (0.19 seconds) suminf.    0.00000 (0) obj. 9.37117e+11 iterations 1116
 Cbc0038I Solution found of 9.37117e+11
 Cbc0038I Cleaned solution of 9.37117e+11
 Cbc0038I Before mini branch and bound, 3348 integers at bound fixed and 0 continuous of which 1116 were internal integer and 0 internal continuous
 Cbc0038I Full problem 4468 rows 3351 columns, reduced to 3 rows 3 columns
-Cbc0038I Mini branch and bound improved solution from 9.37117e+11 to 9.36719e+11 (0.20 seconds)
+Cbc0038I Mini branch and bound improved solution from 9.37117e+11 to 9.36719e+11 (0.21 seconds)
 Cbc0038I Round again with cutoff of 9.36719e+11
-Cbc0038I Pass   2: (0.31 seconds) suminf.    0.01000 (1) obj. 9.36719e+11 iterations 1078
-Cbc0038I Pass   3: (0.32 seconds) suminf.    0.00000 (0) obj. 9.36719e+11 iterations 5
+Cbc0038I Pass   2: (0.33 seconds) suminf.    0.01000 (1) obj. 9.36719e+11 iterations 1078
+Cbc0038I Pass   3: (0.34 seconds) suminf.    0.00000 (0) obj. 9.36719e+11 iterations 5
 Cbc0038I Solution found of 9.36719e+11
 Cbc0038I After further testing solution no better than previous of 9.36719e+11
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 3350 integers at bound fixed and 0 continuous of which 1117 were internal integer and 0 internal continuous
 Cbc0038I Full problem 4468 rows 3351 columns, reduced to 0 rows 0 columns
-Cbc0038I Mini branch and bound did not improve solution (0.34 seconds)
-Cbc0038I After 0.34 seconds - Feasibility pump exiting with objective of 9.36719e+11 - took 0.17 seconds
-Cbc0012I Integer solution of 9.3671852e+11 found by feasibility pump after 0 iterations and 0 nodes (0.34 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.37 seconds)
+Cbc0038I After 0.37 seconds - Feasibility pump exiting with objective of 9.36719e+11 - took 0.20 seconds
+Cbc0012I Integer solution of 9.3671852e+11 found by feasibility pump after 0 iterations and 0 nodes (0.37 seconds)
 Cbc0030I Thread 0 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
 Cbc0030I Thread 1 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
 Cbc0030I Thread 2 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
@@ -49,7 +49,7 @@ Cbc0030I Thread 9 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 lock
 Cbc0030I Thread 10 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
 Cbc0030I Thread 11 used 0 times,  waiting to start 0, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
 Cbc0030I Main thread 0 waiting for threads,  1 locks, 0 locked, 0 waiting for locks
-Cbc0001I Search completed - best objective 936718519587, took 0 iterations and 0 nodes (0.42 seconds)
+Cbc0001I Search completed - best objective 936718519587, took 0 iterations and 0 nodes (0.45 seconds)
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 9.36719e+11 to 9.36719e+11
 Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
@@ -66,9 +66,9 @@ Result - Optimal solution found
 Objective value:                936718519587.00000000
 Enumerated nodes:               0
 Total iterations:               0
-Time (CPU seconds):             0.49
-Time (Wallclock seconds):       0.49
+Time (CPU seconds):             0.51
+Time (Wallclock seconds):       0.51
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.55   (Wallclock seconds):       0.55
+Total time (CPU seconds):       0.57   (Wallclock seconds):       0.56
 

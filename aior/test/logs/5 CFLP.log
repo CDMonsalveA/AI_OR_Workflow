@@ -1,0 +1,22 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/codespace/.python/current/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/fa57934937d141fb9be7204d851749f7-pulp.mps -sec 7200 -threads 4 -timeMode elapsed -branch -printingOptions all -solution /tmp/fa57934937d141fb9be7204d851749f7-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 1249928 COLUMNS
+At line 7490568 RHS
+At line 8740492 BOUNDS
+At line 9989299 ENDATA
+Problem MODEL has 1249923 rows, 1248806 columns and 4990756 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 7200
+threads was changed from 0 to 4
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 3.84773e+08 - 184.92 seconds
+Cgl0000I Cut generators found to be infeasible! (or unbounded)
+Pre-processing says infeasible or unbounded
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       8816.27   (Wallclock seconds):       8840.94
+

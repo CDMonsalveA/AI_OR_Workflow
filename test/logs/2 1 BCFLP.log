@@ -1,0 +1,55 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /workspaces/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/b582d37ae90647e7a00f32e9e6e76354-pulp.mps -sec 300 -threads 4 -timeMode elapsed -branch -printingOptions all -solution /tmp/b582d37ae90647e7a00f32e9e6e76354-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 5591 COLUMNS
+At line 30166 RHS
+At line 35753 BOUNDS
+At line 40222 ENDATA
+Problem MODEL has 5586 rows, 4468 columns and 13404 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 300
+threads was changed from 0 to 4
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 3.79667e+09 - 0.03 seconds
+Cgl0003I 0 fixed, 0 tightened bounds, 1150 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 1141 strengthened rows, 0 substitutions
+Cgl0004I processed model has 4469 rows, 3351 columns (3351 integer (1117 of which binary)) and 12320 elements
+Cbc0038I Initial state - 0 integers unsatisfied sum - 3.48055e-13
+Cbc0038I Solution found of 3.86072e+09
+Cbc0038I Cleaned solution of 3.86072e+09
+Cbc0038I Before mini branch and bound, 3351 integers at bound fixed and 0 continuous of which 1117 were internal integer and 0 internal continuous
+Cbc0038I Mini branch and bound did not improve solution (0.13 seconds)
+Cbc0038I After 0.13 seconds - Feasibility pump exiting with objective of 3.86072e+09 - took 0.01 seconds
+Cbc0012I Integer solution of 3.8607173e+09 found by feasibility pump after 0 iterations and 0 nodes (0.13 seconds)
+Cbc0030I Thread 0 used 0 times,  waiting to start 0.015669107, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0.023569107, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0.019496918, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0.015383005, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 4.0531158e-06 locked, 0 waiting for locks
+Cbc0001I Search completed - best objective 3860717344.75, took 0 iterations and 0 nodes (0.16 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 3.86072e+09 to 3.86072e+09
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                3860717344.75000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.16
+Time (Wallclock seconds):       0.20
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.18   (Wallclock seconds):       0.22
+

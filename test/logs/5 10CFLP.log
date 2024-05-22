@@ -1,0 +1,57 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/cdmonsalvea/tesis/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/cafb6a301e7e4654b007c2ccb820783c-pulp.mps -sec 7200 -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/cafb6a301e7e4654b007c2ccb820783c-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 12773 COLUMNS
+At line 75718 RHS
+At line 88487 BOUNDS
+At line 101144 ENDATA
+Problem MODEL has 12768 rows, 12656 columns and 50176 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 7200
+threads was changed from 0 to 12
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 8.94575e+07 - 0.24 seconds
+Cgl0004I processed model has 12768 rows, 12656 columns (112 integer (112 of which binary)) and 50176 elements
+Cbc0038I Initial state - 64 integers unsatisfied sum - 18.2227
+Cbc0038I Pass   1: (2.68 seconds) suminf.    0.34019 (1) obj. 3.40428e+08 iterations 10289
+Cbc0038I Solution found of 4.38709e+08
+Cbc0038I Relaxing continuous gives 3.07558e+08
+Cbc0038I Before mini branch and bound, 47 integers at bound fixed and 12007 continuous
+Cbc0038I Full problem 12768 rows 12656 columns, reduced to 707 rows 601 columns
+Cbc0038I Mini branch and bound improved solution from 3.07558e+08 to 2.2267e+08 (3.55 seconds)
+Cbc0038I Freeing continuous variables gives a solution of 2.22657e+08
+Cbc0038I Round again with cutoff of 2.15076e+08
+Cbc0038I Pass   2: (6.69 seconds) suminf.    0.59154 (3) obj. 2.15076e+08 iterations 8309
+Cbc0038I Pass   3: (6.77 seconds) suminf.    0.79318 (4) obj. 2.15076e+08 iterations 521
+Cbc0038I Pass   4: (6.79 seconds) suminf.    0.75459 (7) obj. 2.15076e+08 iterations 182
+Cbc0038I Pass   5: (6.87 seconds) suminf.    0.54818 (2) obj. 2.15076e+08 iterations 552
+Cbc0038I Pass   6: (6.89 seconds) suminf.    0.54559 (4) obj. 2.15076e+08 iterations 263
+Cbc0038I Pass   7: (6.94 seconds) suminf.    0.49848 (2) obj. 2.15076e+08 iterations 283
+Cbc0038I Pass   8: (6.96 seconds) suminf.    0.49055 (2) obj. 2.15076e+08 iterations 308
+Cbc0038I Pass   9: (7.00 seconds) suminf.    0.47940 (2) obj. 2.15076e+08 iterations 276
+Cbc0038I Pass  10: (7.01 seconds) suminf.    0.47436 (2) obj. 2.15076e+08 iterations 204
+Cbc0038I Pass  11: (7.66 seconds) suminf.    0.86269 (4) obj. 2.15076e+08 iterations 4090
+Cbc0038I Pass  12: (7.74 seconds) suminf.    0.72238 (3) obj. 2.15076e+08 iterations 1165
+Cbc0038I Pass  13: (7.79 seconds) suminf.    0.94608 (3) obj. 2.15076e+08 iterations 620
+Cbc0038I Pass  14: (8.07 seconds) suminf.    1.14008 (4) obj. 2.15076e+08 iterations 2132
+Cbc0038I Pass  15: (8.10 seconds) suminf.    0.72187 (3) obj. 2.15076e+08 iterations 257
+Cbc0038I Pass  16: (8.14 seconds) suminf.    1.45653 (4) obj. 2.15076e+08 iterations 530
+Cbc0038I Pass  17: (8.16 seconds) suminf.    1.21393 (5) obj. 2.15076e+08 iterations 309
+Cbc0038I Pass  18: (8.25 seconds) suminf.    1.09716 (4) obj. 2.15076e+08 iterations 896
+Cbc0038I Pass  19: (8.32 seconds) suminf.    1.41706 (4) obj. 2.15076e+08 iterations 870
+Cbc0038I Pass  20: (8.64 seconds) suminf.    1.26124 (4) obj. 2.15076e+08 iterations 2048
+Cbc0038I Pass  21: (8.72 seconds) suminf.    0.96146 (4) obj. 2.15076e+08 iterations 818
+Cbc0038I Pass  22: (8.79 seconds) suminf.    1.26124 (4) obj. 2.15076e+08 iterations 938
+Cbc0038I Pass  23: (8.96 seconds) suminf.    1.29454 (5) obj. 2.15076e+08 iterations 1362
+Cbc0038I Pass  24: (9.03 seconds) suminf.    1.09733 (3) obj. 2.15076e+08 iterations 851
+Cbc0038I Pass  25: (9.05 seconds) suminf.    0.79409 (3) obj. 2.15076e+08 iterations 142
+Cbc0038I Pass  26: (9.10 seconds) suminf.    1.03976 (3) obj. 2.15076e+08 iterations 556
+Cbc0038I Pass  27: (9.11 seconds) suminf.    0.92327 (3) obj. 2.15076e+08 iterations 39
+Cbc0038I Pass  28: (9.62 seconds) suminf.    0.79329 (4) obj. 2.15076e+08 iterations 3005
+Cbc0038I No solution found this major pass
+Cbc0038I After 9.62 seconds - Feasibility pump exiting with objective of 2.22657e+08 - took 8.06 seconds
+Cbc0012I Intege

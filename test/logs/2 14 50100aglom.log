@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/tesis/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/ee42505220964cbfa205d122a93ed0f4-pulp.mps -sec 300 -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/ee42505220964cbfa205d122a93ed0f4-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/tesis/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/788b1838483442bd8aed914828f5cdc4-pulp.mps -sec 300 -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/788b1838483442bd8aed914828f5cdc4-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 2726 COLUMNS
@@ -26,19 +26,19 @@ Cbc0038I Mini branch and bound did not improve solution (0.06 seconds)
 Cbc0038I After 0.06 seconds - Feasibility pump exiting with objective of 1.85102e+09 - took 0.00 seconds
 Cbc0012I Integer solution of 1.851023e+09 found by feasibility pump after 0 iterations and 0 nodes (0.06 seconds)
 Cbc0038I Full problem 2177 rows 1632 columns, reduced to 0 rows 0 columns
-Cbc0030I Thread 0 used 0 times,  waiting to start 0.024542809, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 1 used 0 times,  waiting to start 0.022671938, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 2 used 0 times,  waiting to start 0.020911217, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 3 used 0 times,  waiting to start 0.019071102, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 4 used 0 times,  waiting to start 0.016579866, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 5 used 0 times,  waiting to start 0.014163017, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 6 used 0 times,  waiting to start 0.012276888, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 7 used 0 times,  waiting to start 0.010443926, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 8 used 0 times,  waiting to start 0.0085451603, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 9 used 0 times,  waiting to start 0.0065910816, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 10 used 0 times,  waiting to start 0.0047769547, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 11 used 0 times,  waiting to start 0.003000021, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Main thread 0 waiting for threads,  1 locks, 8.1062317e-06 locked, 0 waiting for locks
+Cbc0030I Thread 0 used 0 times,  waiting to start 0.025582075, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0.023566961, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0.021579981, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0.019592047, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 4 used 0 times,  waiting to start 0.017538071, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 5 used 0 times,  waiting to start 0.015341997, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 6 used 0 times,  waiting to start 0.013212919, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 7 used 0 times,  waiting to start 0.011075974, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 8 used 0 times,  waiting to start 0.0089581013, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 9 used 0 times,  waiting to start 0.0069160461, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 10 used 0 times,  waiting to start 0.004899025, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 11 used 0 times,  waiting to start 0.0028419495, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 5.9604645e-06 locked, 0 waiting for locks
 Cbc0001I Search completed - best objective 1851023002.25, took 0 iterations and 0 nodes (0.09 seconds)
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 1.85102e+09 to 1.85102e+09
@@ -60,5 +60,5 @@ Time (CPU seconds):             0.08
 Time (Wallclock seconds):       0.11
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.09   (Wallclock seconds):       0.12
+Total time (CPU seconds):       0.10   (Wallclock seconds):       0.13
 

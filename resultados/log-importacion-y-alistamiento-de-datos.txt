@@ -1,0 +1,21 @@
+Procesando los DATOS COMPLETOS
+Matriz de costos completada
+     Se corrigieron 2 valores por distancia en línea recta
+Matriz de distancias completada
+     Se eliminaron 691 filas
+Municipios completados
+     No se encontró un almacen que cumpla la demanda para 18001
+Opciones de almacenes completadas
+
+Procesando los DATOS IMPERFECTOS
+    Cantidad de Municipios que demuestran inconsistencia en via terrestre 6
+    Cantidad de valores no existentes: 40 previo a ajuste de distancias
+    Cantidad de valores no existentes: 0 posterior a ajuste de distancias
+    Se ajustaron 2504 distancias
+    No se ajustó la matriz de distancias de manera satisfactoria
+    Se encontraron 0 valores iguales a cero fuera de la diagonal principal
+Matriz de distancias completada
+Matriz de costos completada
+     Se eliminaron 6 filas
+Municipios completados
+Opciones de almacenes completadas

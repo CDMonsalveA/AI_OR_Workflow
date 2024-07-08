@@ -248,11 +248,9 @@ def procesar_municipios_completos(municipios, matriz_de_costos_final):
         str(x) for x in range(1985, 2024)
     ]
     municipios_final = municipios[columnas_de_interes]
-    # para 27086 tomar los mismos valores que 27493 para la población
+    # para 27086 tomar los mismos valores que 27493 para la población 1985 | ... | 2023
     if 27086 in municipios_final.index:
-        municipios_final.loc[27086, range(1985, 2024)] = municipios_final.loc[
-            27495, range(1985, 2024)
-        ].values
+        municipios_final.loc[27086, "1985":"2023"] = municipios_final.loc[27495, "1985":"2023"]
 
     return municipios_final
 

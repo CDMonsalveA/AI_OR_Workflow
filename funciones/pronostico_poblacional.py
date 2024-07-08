@@ -14,8 +14,10 @@
     # 4. Escoger el mejor modelo.
     # 5. Guardar los resultados.
 """
+
 import os
 import time
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -32,11 +34,11 @@ from sklearn.neural_network import MLPRegressor
 
 # warnings
 from sklearn.exceptions import ConvergenceWarning
-import warnings
 
 warnings.simplefilter(action="ignore", category=ConvergenceWarning)
 
-def seleccionar_datos_historicos(datos: pd.DataFrame, años: range) -> pd.DataFrame:
+
+def seleccionar_datos_historicos(datos: pd.DataFrame, anios: range) -> pd.DataFrame:
     """
     Selecciona los datos históricos de los años que se desean pronosticar.
 
@@ -52,13 +54,26 @@ def seleccionar_datos_historicos(datos: pd.DataFrame, años: range) -> pd.DataFr
     pd.DataFrame
         Datos históricos de los años que se desean pronosticar.
     """
-    datos = datos[[str(x) for x in años]]
+    datos = datos[[str(x) for x in anios]]
     datos.columns = datos.columns.astype(int)
     datos = datos.replace(0, np.nan)
     return datos
 
 
 def definicion_de_modelos_de_regresion(RANDOM_SEED):
+    """
+    Define los modelos de regresión que se van a utilizar en el pronóstico poblacional.
+
+    Parámetros:
+    -----------
+    RANDOM_SEED: int
+        Semilla aleatoria.
+
+    Retorna:
+    --------
+    dict
+        Diccionario con los modelos de regresión
+    """
     # modelos = {
     #     "Regresión Lineal Múltiple": LinearRegression(),
     #     "Árboles de Regresión": DecisionTreeRegressor(random_state=RANDOM_SEED),
@@ -170,7 +185,7 @@ def generar_las_mejores_predicciones_por_municipio(
     prediccion_2034 = {}
     for divipola, prediccion in predicciones.iterrows():
         prediccion = prediccion.dropna()
-        X = prediccion.index.values.reshape(-1, 1)
+        X = prediccion.index.values.reshape(-1, 1) 
         y = prediccion.values
         mejor_modelo_para_municipio = municipios_con_mejor_modelo.loc[
             municipios_con_mejor_modelo.index == divipola
@@ -299,7 +314,8 @@ def pronostico_poblacional(RANDOM_SEED):
                     f"Progreso: {progreso/(municipios.shape[0] * len(modelos))*100:0.2f}%",
                     end="\r",
                 )
-            # añadición de un modelo por defecto que es el promedio de los datos validos con valor R2 = 0.9
+            # añadición de un modelo por defecto que es el promedio de
+            #  los datos validos con valor R2 = 0.9
             resultados = registrar_metrica_predeterminada(resultados, divipola)
 
         # 3. Sacar las métricas generales por modelo.

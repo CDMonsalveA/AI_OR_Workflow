@@ -193,8 +193,8 @@ def procesar_opciones_de_almacenes(
         demanda = municipios_final.loc[divipol, "2023"] * comida_per_capita
         # 3. Revisar si existe un almacen que cumpla la demanda por un factor de 1.5
         opciones["capacidad"] = (
-            opciones["area"] * densidad_de_alimentos * 5
-        )  # 5 metros de altura
+            opciones["area"] * densidad_de_alimentos * 5 * 7
+        )  # 5 metros de altura |   7 días de almacenamiento
         opciones["cumple_demanda"] = opciones["capacidad"] >= demanda * 1.5
 
         opciones = opciones[opciones["cumple_demanda"]].copy()

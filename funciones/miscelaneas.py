@@ -96,6 +96,7 @@ def crear_estructura_de_archivos():
         os.makedirs("resultados/tablas", exist_ok=True)
         os.makedirs("resultados/tablas/pronostico_poblacional", exist_ok=True)
         os.makedirs("resultados/tablas/capacidad_y_costo", exist_ok=True)
+        os.makedirs("resultados/tablas/predecir_capacidad_y_costo", exist_ok=True)
         os.makedirs("resultados/graficos", exist_ok=True)
         os.makedirs("resultados/graficos/pronostico_poblacional", exist_ok=True)
         os.makedirs("resultados/graficos/capacidad_y_costo", exist_ok=True)

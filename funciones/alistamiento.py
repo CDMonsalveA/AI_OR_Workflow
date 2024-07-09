@@ -260,7 +260,8 @@ def procesar_opciones_de_almacenes(
                 'precio': opciones['price'][:i].sum()
             }
         else:
-            print(f"     No se encontró un almacen que cumpla la demanda para {divipol}| demanda: {demanda} | suma de capacidad: {opciones['capacidad'].sum()}")
+            print(f"     No se encontró un almacen que cumpla la demanda para\
+\n {divipol}| demanda: {demanda} | suma de capacidad: {opciones['capacidad'].sum()}")
             continue
         for key, value in opcion_a_escoger.items():
             opciones_de_almacenes_final[key].append(value)
@@ -300,8 +301,7 @@ def procesar_opciones_de_almacenes(
 #                     f"     No se encontró una combinación de almacenes que cumpla \
 # la demanda para {divipol}, demanda: {demanda}, suma de capacidad: {opciones['capacidad'].sum()}"
 #                 )
-#                 continue            
-
+#                 continue
 #         if demanda == 0:
 #             print(f"     La demanda para el municipio {divipol} es cero")
 #             continue

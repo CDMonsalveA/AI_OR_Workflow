@@ -3,7 +3,6 @@ Alistamiento de los datos para el modelo de optimización
 """
 
 import os
-import warnings
 import geopy.distance
 import numpy as np
 import pandas as pd
@@ -153,7 +152,6 @@ def alistar_datos_completos(
         opciones_de_almacenes,
         comida_per_capita,
         densidad_de_alimentos,
-        matriz_de_costos_final,
         municipios_final,
     )
     print("Opciones de almacenes completadas")
@@ -171,70 +169,170 @@ def alistar_datos_completos(
 
 
 def procesar_opciones_de_almacenes(
-    opciones_de_almacenes,
-    comida_per_capita,
-    densidad_de_alimentos,
-    matriz_de_costos_final,
-    municipios_final,
+    opciones_de_almacenes: dict,
+    comida_per_capita: float,
+    densidad_de_alimentos: float,
+    municipios_final: pd.DataFrame,
 ):
     """
-    Procesar las opciones de almacenes para seleccionar el mejor almacen por departamento
+    Procesar las opciones de almacenes para seleccionar el mejor
+    almacen por municipio, entre los listados en las opciones
+
+    Parametros
+    ----------
+    opciones_de_almacenes : dict
+        Opciones de los mejores 21 almacenes por departamento {divipol: pd.DataFrame}
+            df.columns = price	area	location	link	image
+    comida_per_capita : float
+        Cantidad de comida necesaria por persona
+    densidad_de_alimentos : float
+        Densidad de los alimentos
+    matriz_de_costos_final : pd.DataFrame
+        Matriz de costos de transporte entre municipios con información completa
+    municipios_final : pd.DataFrame
+        Información de los municipios de Colombia con historico de población 1985-2023
+        con información completa
+
+    Returns
+    -------
+    opciones_de_almacenes_final : pd.DataFrame
+        Opciones de los almacenes seleccionados por municipio
+
+    Proceso
+    -------
+    por municipio:
+        encontrar la demanda de almacenamiento por 7 días con un factor de 1.5
+            demanda = población * comida_per_capita * 7 * 1.5
+        encontrar la capacidad de almacenamiento de los almacenes
+            capacidad = area * densidad_de_alimentos * 5
+        Si al menos un almacen cumple la demanda, seleccionar el mejor almacen
+            ranquear los precios de los almacenes
+            ranquear la capacidad de los almacenes
+            calcular (Rankeo de precios * 0.2 + Rankeo de capacidad * 0.8)
+            seleccionar el mejor almacen
+        Si no existe un almacen que cumpla la demanda, seleccionar 
+         una combinación de almacenes
+            ordenar los almacenes por capacidad de mayor a menor
+            sumar los almacenes hasta cumplir la demanda
+            crear un nuevo almacen con la suma de almacenamiento y la suma de costos
+        Si no existe una combinación de almacenes que cumpla la demanda,
+            no reportar el municipio
+
+        retornar una lista con los datos [divipol, ubicacion, area, capacidad, precio]
+
     """
-    opciones_de_almacenes_final = pd.DataFrame(
-        columns=["divipol", "ubicacion", "area", "capacidad", "precio"]
-    )
+    opciones_de_almacenes_final = {
+        'divipol': [],
+        'ubicacion': [],
+        'area': [],
+        'capacidad': [],
+        'precio': []
+    }
     for divipol, opciones in opciones_de_almacenes.items():
         divipol = int(divipol)
-        # 1. Eliminar las opciones que no estén en la matriz de costos
-        if divipol not in matriz_de_costos_final.index:
-            print(f"     No se encontró información para el municipio {divipol}")
+        demanda = pd.to_numeric(municipios_final.loc[divipol, "2023"]) * comida_per_capita * 7 * 1.5
+        opciones['capacidad'] = opciones['area'] * densidad_de_alimentos * 5
+        if any(opciones['capacidad'] >= demanda):
+            opciones = opciones[opciones['capacidad'] >= demanda].copy()
+            opciones['rank_precio'] = opciones['price'].rank(ascending=True)
+            opciones['rank_capacidad'] = opciones['capacidad'].rank(ascending=False)
+            opciones['rank_total'] = (opciones['rank_precio'] * 0.2 +
+                                       opciones['rank_capacidad'] * 0.8)
+            opciones = opciones.sort_values('rank_total', ascending=True)
+            opcion_a_escoger = {
+                'divipol': divipol,
+                'ubicacion': opciones.iloc[0]['location'],
+                'area': opciones.iloc[0]['area'],
+                'capacidad': opciones.iloc[0]['capacidad'],
+                'precio': opciones.iloc[0]['price']
+            }
+        elif opciones['capacidad'].sum() >= demanda:
+            opciones = opciones.sort_values('capacidad', ascending=False)
+            i = 0
+            for i, _ in opciones.iterrows():
+                if opciones['capacidad'].cumsum()[i] >= demanda:
+                    break
+            opcion_a_escoger = {
+                'divipol': divipol,
+                'ubicacion': 'combinación de almacenes',
+                'area': opciones['area'][:i].sum(),
+                'capacidad': opciones['capacidad'][:i].sum(),
+                'precio': opciones['price'][:i].sum()
+            }
+        else:
+            print(f"     No se encontró un almacen que cumpla la demanda para {divipol}| demanda: {demanda} | suma de capacidad: {opciones['capacidad'].sum()}")
             continue
-            # 2. Encontrar por municipio que tantos m2 de almacenamiento se necesitan
-        demanda = municipios_final.loc[divipol, "2023"] * comida_per_capita
-        # 3. Revisar si existe un almacen que cumpla la demanda por un factor de 1.5
-        opciones["capacidad"] = (
-            opciones["area"] * densidad_de_alimentos * 5 * 7
-        )  # 5 metros de altura |   7 días de almacenamiento
-        opciones["cumple_demanda"] = opciones["capacidad"] >= demanda * 1.5
+        for key, value in opcion_a_escoger.items():
+            opciones_de_almacenes_final[key].append(value)
 
-        opciones = opciones[opciones["cumple_demanda"]].copy()
-        if opciones["cumple_demanda"].sum() == 0:
-            print(
-                f"     No se encontró un almacen que cumpla la demanda para {divipol}"
-            )
-            continue
-
-        if demanda == 0:
-            print(f"     La demanda para el municipio {divipol} es cero")
-            continue
-
-        # 4. Rankear los precios de los almacenes
-        opciones["rank_precio"] = opciones["price"].rank(ascending=True)
-        # 5. Rankear la capacidad de los almacenes
-        opciones["rank_capacidad"] = opciones["capacidad"].rank(ascending=False)
-        # 6. Calcular (Rankeo de precios * 0.2 + Rankeo de capacidad * 0.8)
-        opciones["rank_total"] = (
-            opciones["rank_precio"] * 0.2 + opciones["rank_capacidad"] * 0.8
-        )
-        # 7. Seleccionar el mejor almacen por departamento
-        opciones = opciones.sort_values("rank_total", ascending=True)
-        opcion_a_escoger = {
-            "divipol": divipol,
-            "ubicacion": opciones.iloc[0]["location"],
-            "area": opciones.iloc[0]["area"],
-            "capacidad": opciones.iloc[0]["capacidad"],
-            "precio": opciones.iloc[0]["price"],
-        }
-        opcion_a_escoger = pd.DataFrame(opcion_a_escoger, index=[0])
-        warnings.catch_warnings()
-        warnings.simplefilter("ignore", category=FutureWarning)
-        opciones_de_almacenes_final = pd.concat(
-            [opciones_de_almacenes_final, opcion_a_escoger]
-        )
-    # set divipol as index
-    opciones_de_almacenes_final = opciones_de_almacenes_final.set_index("divipol")
-
+    opciones_de_almacenes_final = pd.DataFrame(opciones_de_almacenes_final)
+    opciones_de_almacenes_final = opciones_de_almacenes_final.set_index('divipol')
     return opciones_de_almacenes_final
+#     opciones_de_almacenes_final = pd.DataFrame(
+#         columns=["divipol", "ubicacion", "area", "capacidad", "precio"]
+#     )
+#     for divipol, opciones in opciones_de_almacenes.items():
+#         divipol = int(divipol)
+#         # 1. Eliminar las opciones que no estén en la matriz de costos
+#         if divipol not in matriz_de_costos_final.index:
+#             print(f"     No se encontró información para el municipio {divipol}")
+#             continue
+#             # 2. Encontrar por municipio que tantos m2 de almacenamiento se necesitan
+#         demanda = municipios_final.loc[divipol, "2023"] * comida_per_capita * 7 # 7 días
+#         # 3. Revisar si existe un almacen que cumpla la demanda por un factor de 1.5
+#         opciones["capacidad"] = (
+#             opciones["area"] * densidad_de_alimentos * 5
+#         )  # 5 metros de altura
+#         opciones["cumple_demanda"] = opciones["capacidad"] >= demanda * 1.5
+
+#         opciones = opciones[opciones["cumple_demanda"]].copy()
+#         if opciones["cumple_demanda"].sum() == 0:
+#             print(
+#                 f"     No se encontró un almacen que cumpla la demanda para {divipol}"
+#             )
+#             # 3.1. Si no existe, revisar si la suma de los almacenes cumple la demanda
+#             # por un factor de 1.5
+#             opciones = opciones.sort_values("capacidad", ascending=False)
+#             opciones["cumple_demanda"] = opciones["capacidad"].cumsum() >= demanda * 1.5
+#             opciones = opciones[opciones["cumple_demanda"]].copy()
+#             if opciones["cumple_demanda"].sum() == 0:
+#                 print(
+#                     f"     No se encontró una combinación de almacenes que cumpla \
+# la demanda para {divipol}, demanda: {demanda}, suma de capacidad: {opciones['capacidad'].sum()}"
+#                 )
+#                 continue            
+
+#         if demanda == 0:
+#             print(f"     La demanda para el municipio {divipol} es cero")
+#             continue
+
+#         # 4. Rankear los precios de los almacenes
+#         opciones["rank_precio"] = opciones["price"].rank(ascending=True)
+#         # 5. Rankear la capacidad de los almacenes
+#         opciones["rank_capacidad"] = opciones["capacidad"].rank(ascending=False)
+#         # 6. Calcular (Rankeo de precios * 0.2 + Rankeo de capacidad * 0.8)
+#         opciones["rank_total"] = (
+#             opciones["rank_precio"] * 0.2 + opciones["rank_capacidad"] * 0.8
+#         )
+#         # 7. Seleccionar el mejor almacen por departamento
+#         opciones = opciones.sort_values("rank_total", ascending=True)
+#         opcion_a_escoger = {
+#             "divipol": divipol,
+#             "ubicacion": opciones.iloc[0]["location"],
+#             "area": opciones.iloc[0]["area"],
+#             "capacidad": opciones.iloc[0]["capacidad"],
+#             "precio": opciones.iloc[0]["price"],
+#         }
+#         opcion_a_escoger = pd.DataFrame(opcion_a_escoger, index=[0])
+#         warnings.catch_warnings()
+#         warnings.simplefilter("ignore", category=FutureWarning)
+#         opciones_de_almacenes_final = pd.concat(
+#             [opciones_de_almacenes_final, opcion_a_escoger]
+#         )
+#     # set divipol as index
+#     opciones_de_almacenes_final = opciones_de_almacenes_final.set_index("divipol")
+
+#     return opciones_de_almacenes_final
 
 
 def procesar_municipios_completos(municipios, matriz_de_costos_final):

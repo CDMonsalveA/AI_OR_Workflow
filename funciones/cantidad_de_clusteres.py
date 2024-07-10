@@ -172,7 +172,7 @@ def cantidad_de_clusteres(RANDOM_SEED):
             else:
                 k_propuestos["estatus"].append(propuesta[2])
             progreso += 1
-            print(f"  Progreso: {(progreso)/len(muestras)}", end="\r")
+            print(f"  Progreso: {(progreso)/len(muestras)*100:.2f}%", end="\r")
 
     # Guardar los resultados
         pd.DataFrame(k_propuestos).to_csv(

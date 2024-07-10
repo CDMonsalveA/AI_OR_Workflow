@@ -241,7 +241,7 @@ def pronostico_poblacional(RANDOM_SEED):
         "resultados/tablas/pronostico_poblacional/datos_imperfectos.csv",
     ]
     if all([os.path.exists(archivo) for archivo in archivos_a_generar]):
-        print("El proceso de pronóstico poblacional ya fue realizado")
+        print("\nEl proceso de pronóstico poblacional ya fue realizado")
         return
     else:
         print("\nIniciando el proceso de pronóstico poblacional", end="\n")

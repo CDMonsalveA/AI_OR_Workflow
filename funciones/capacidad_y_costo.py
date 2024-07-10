@@ -153,6 +153,7 @@ def pl_capacidad_y_costos(
     prob.solve(
         solver=pl.PULP_CBC_CMD(
             logPath=f"resultados/logs/2. capacidad_y_costo/{id_data}.log",
+            threads=os.cpu_count(),
         )
     )
 

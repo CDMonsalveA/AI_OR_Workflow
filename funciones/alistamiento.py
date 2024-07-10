@@ -481,7 +481,7 @@ def guardar_datos_completos(
     """
     Guardar los datos procesados"""
     matriz_de_costos_en_pesos = pd.DataFrame(
-        matriz_de_costos.values * matriz_de_distancias.values,
+        matriz_de_costos.values * matriz_de_distancias.values / 10.5,
         index=matriz_de_costos.index,
         columns=matriz_de_costos.columns,
     )
@@ -720,7 +720,7 @@ def guardar_datos_imperfectos(
     """
     Guardar los datos procesados"""
     matriz_de_costos_en_pesos = pd.DataFrame(
-        matriz_de_costos.values * matriz_de_distancias.values,
+        matriz_de_costos.values * matriz_de_distancias.values / 10.5,
         index=matriz_de_costos.index,
         columns=matriz_de_costos.columns,
     )

@@ -1,0 +1,67 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/9d670b8ada564cf1bfb09cc21e32c65e-pulp.mps -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/9d670b8ada564cf1bfb09cc21e32c65e-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 1122 COLUMNS
+At line 10059 RHS
+At line 11177 BOUNDS
+At line 13412 ENDATA
+Problem MODEL has 1117 rows, 2234 columns and 2234 elements
+Coin0008I MODEL read with 0 errors
+threads was changed from 0 to 12
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 8.80533e+08 - 0.00 seconds
+Cgl0003I 0 fixed, 2234 tightened bounds, 1090 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 1053 strengthened rows, 0 substitutions
+Cgl0004I processed model has 1117 rows, 2234 columns (2234 integer (0 of which binary)) and 2234 elements
+Cbc0012I Integer solution of 3.9597231e+09 found by greedy cover after 0 iterations and 0 nodes (0.03 seconds)
+Cbc0038I Full problem 1117 rows 2234 columns, reduced to 27 rows 54 columns
+Cbc0012I Integer solution of 3.9055846e+09 found by DiveCoefficient after 104 iterations and 0 nodes (0.63 seconds)
+Cbc0031I 76 added rows had average density of 2
+Cbc0013I At root node, 76 cuts changed objective from 3.8258658e+09 to 3.9055846e+09 in 19 passes
+Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 1 column cuts (1 active)  in 0.491 seconds - new frequency is -100
+Cbc0014I Cut generator 1 (Gomory) - 112 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.006 seconds - new frequency is -100
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 73 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.008 seconds - new frequency is 1
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.007 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 123 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is 1
+Cbc0030I Thread 0 used 0 times,  waiting to start 0.019730806, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0.018311977, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0.016739845, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0.015202999, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 4 used 0 times,  waiting to start 0.013651133, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 5 used 0 times,  waiting to start 0.012176991, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 6 used 0 times,  waiting to start 0.010590076, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 7 used 0 times,  waiting to start 0.008589983, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 8 used 0 times,  waiting to start 0.0069429874, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 9 used 0 times,  waiting to start 0.0054152012, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 10 used 0 times,  waiting to start 0.0039019585, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 11 used 0 times,  waiting to start 0.0023860931, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 5.0067902e-06 locked, 9.5367432e-07 waiting for locks
+Cbc0001I Search completed - best objective 3905584632.5, took 104 iterations and 0 nodes (0.65 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 3.82587e+09 to 3.90558e+09
+Probing was tried 247 times and created 1 cuts of which 0 were active after adding rounds of cuts (6.381 seconds)
+Gomory was tried 247 times and created 1456 cuts of which 0 were active after adding rounds of cuts (0.065 seconds)
+Knapsack was tried 247 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.081 seconds)
+Clique was tried 247 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+MixedIntegerRounding2 was tried 247 times and created 949 cuts of which 0 were active after adding rounds of cuts (0.106 seconds)
+FlowCover was tried 247 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.086 seconds)
+TwoMirCuts was tried 247 times and created 1599 cuts of which 0 were active after adding rounds of cuts (0.156 seconds)
+ZeroHalf was tried 13 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                3905584632.50000000
+Enumerated nodes:               0
+Total iterations:               104
+Time (CPU seconds):             0.64
+Time (Wallclock seconds):       0.67
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.64   (Wallclock seconds):       0.67
+

@@ -1,0 +1,118 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/456b9ac403d8443381b2eba3edb9638b-pulp.mps -sec 1800 -timeMode elapsed -branch -printingOptions all -solution /tmp/456b9ac403d8443381b2eba3edb9638b-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 2239 COLUMNS
+At line 3748646 RHS
+At line 3750881 BOUNDS
+At line 3751997 ENDATA
+Problem MODEL has 2234 rows, 1248804 columns and 2496493 elements
+Coin0008I MODEL read with 0 errors
+seconds was changed from 1e+100 to 1800
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 7.6997e+08 - 2.30 seconds
+Cgl0004I processed model has 2232 rows, 1246570 columns (1115 integer (1115 of which binary)) and 2492025 elements
+Cbc0038I Initial state - 1106 integers unsatisfied sum - 132.008
+Cbc0038I Pass   1: suminf.    0.35747 (1) obj. 5.34453e+10 iterations 1361
+Cbc0038I Solution found of 5.3446e+10
+Cbc0038I Relaxing continuous gives 2.38148e+10
+Cbc0038I Before mini branch and bound, 9 integers at bound fixed and 1243224 continuous
+Cbc0038I Full problem 2232 rows 1246570 columns, reduced to 2174 rows 3248 columns
+Cbc0038I Mini branch and bound improved solution from 2.38148e+10 to 3.81487e+09 (29.36 seconds)
+Cbc0038I Freeing continuous variables gives a solution of 3.68915e+09
+Cbc0038I Round again with cutoff of 3.39723e+09
+Cbc0038I Pass   2: suminf.   34.94706 (362) obj. 3.39723e+09 iterations 5054
+Cbc0038I Pass   3: suminf.   28.01522 (315) obj. 3.39723e+09 iterations 283
+Cbc0038I Pass   4: suminf.   27.42563 (319) obj. 3.39723e+09 iterations 13
+Cbc0038I Pass   5: suminf.   20.24806 (273) obj. 3.39723e+09 iterations 246
+Cbc0038I Pass   6: suminf.   14.06427 (237) obj. 3.39723e+09 iterations 319
+Cbc0038I Pass   7: suminf.    6.91630 (160) obj. 3.39723e+09 iterations 537
+Cbc0038I Pass   8: suminf.    6.91533 (161) obj. 3.39723e+09 iterations 14
+Cbc0038I Pass   9: suminf.    3.25720 (95) obj. 3.39723e+09 iterations 486
+Cbc0038I Pass  10: suminf.    3.25192 (95) obj. 3.39723e+09 iterations 11
+Cbc0038I Pass  11: suminf.    1.57672 (59) obj. 3.39723e+09 iterations 254
+Cbc0038I Pass  12: suminf.    1.57268 (59) obj. 3.39723e+09 iterations 6
+Cbc0038I Pass  13: suminf.    0.84745 (30) obj. 3.39723e+09 iterations 338
+Cbc0038I Pass  14: suminf.    0.84653 (29) obj. 3.39723e+09 iterations 3
+Cbc0038I Pass  15: suminf.    0.63689 (8) obj. 3.39723e+09 iterations 243
+Cbc0038I Pass  16: suminf.    0.63744 (7) obj. 3.39723e+09 iterations 3
+Cbc0038I Pass  17: suminf.    0.23220 (1) obj. 3.39723e+09 iterations 99
+Cbc0038I Pass  18: suminf.    0.09834 (1) obj. 3.39723e+09 iterations 106
+Cbc0038I Pass  19: suminf.    1.12804 (6) obj. 3.39723e+09 iterations 1940
+Cbc0038I Pass  20: suminf.    0.70744 (5) obj. 3.39723e+09 iterations 39
+Cbc0038I Pass  21: suminf.    0.40105 (1) obj. 3.39723e+09 iterations 127
+Cbc0038I Pass  22: suminf.    0.00000 (0) obj. 3.39723e+09 iterations 90
+Cbc0038I Solution found of 3.39723e+09
+Cbc0038I Relaxing continuous gives 3.36903e+09
+Cbc0038I Before mini branch and bound, 7 integers at bound fixed and 1242253 continuous
+Cbc0038I Full problem 2232 rows 1246570 columns, reduced to 2082 rows 4088 columns
+Cbc0038I Mini branch and bound did not improve solution (112.15 seconds)
+Cbc0038I Round again with cutoff of 2.84922e+09
+Cbc0038I Pass  23: suminf.   44.71919 (461) obj. 2.84922e+09 iterations 167
+Cbc0038I Pass  24: suminf.   36.81128 (425) obj. 2.84922e+09 iterations 311
+Cbc0038I Pass  25: suminf.   31.09609 (405) obj. 2.84922e+09 iterations 231
+Cbc0038I Pass  26: suminf.   22.11423 (344) obj. 2.84922e+09 iterations 360
+Cbc0038I Pass  27: suminf.   18.42894 (318) obj. 2.84922e+09 iterations 163
+Cbc0038I Pass  28: suminf.   12.94892 (258) obj. 2.84922e+09 iterations 398
+Cbc0038I Pass  29: suminf.   12.32881 (252) obj. 2.84922e+09 iterations 21
+Cbc0038I Pass  30: suminf.    8.82452 (207) obj. 2.84922e+09 iterations 333
+Cbc0038I Pass  31: suminf.    8.82211 (206) obj. 2.84922e+09 iterations 2
+Cbc0038I Pass  32: suminf.    5.80778 (155) obj. 2.84922e+09 iterations 468
+Cbc0038I Pass  33: suminf.    5.80552 (155) obj. 2.84922e+09 iterations 5
+Cbc0038I Pass  34: suminf.    4.13855 (112) obj. 2.84922e+09 iterations 430
+Cbc0038I Pass  35: suminf.    4.10213 (123) obj. 2.84922e+09 iterations 17
+Cbc0038I Pass  36: suminf.    2.18536 (71) obj. 2.84922e+09 iterations 509
+Cbc0038I Pass  37: suminf.    2.16868 (81) obj. 2.84922e+09 iterations 15
+Cbc0038I Pass  38: suminf.    1.15411 (51) obj. 2.84922e+09 iterations 166
+Cbc0038I Pass  39: suminf.    1.15293 (51) obj. 2.84922e+09 iterations 1
+Cbc0038I Pass  40: suminf.    1.35789 (36) obj. 2.84922e+09 iterations 315
+Cbc0038I Pass  41: suminf.    1.35745 (36) obj. 2.84922e+09 iterations 2
+Cbc0038I Pass  42: suminf.    1.36395 (13) obj. 2.84922e+09 iterations 284
+Cbc0038I Pass  43: suminf.    1.36340 (13) obj. 2.84922e+09 iterations 3
+Cbc0038I Pass  44: suminf.    1.33353 (14) obj. 2.84922e+09 iterations 73
+Cbc0038I Pass  45: suminf.    1.31414 (14) obj. 2.84922e+09 iterations 9
+Cbc0038I Pass  46: suminf.    0.54682 (2) obj. 2.84922e+09 iterations 151
+Cbc0038I Pass  47: suminf.    0.46287 (2) obj. 2.84922e+09 iterations 23
+Cbc0038I Pass  48: suminf.    6.00039 (45) obj. 2.84922e+09 iterations 1765
+Cbc0038I Pass  49: suminf.    5.29364 (43) obj. 2.84922e+09 iterations 25
+Cbc0038I Pass  50: suminf.    2.00522 (23) obj. 2.84922e+09 iterations 165
+Cbc0038I Pass  51: suminf.    1.96641 (23) obj. 2.84922e+09 iterations 9
+Cbc0038I Pass  52: suminf.    1.61212 (17) obj. 2.84922e+09 iterations 108
+Cbc0038I Rounding solution of 2.88923e+09 is better than previous of 3.36903e+09
+
+Cbc0038I Before mini branch and bound, 7 integers at bound fixed and 1242422 continuous
+Cbc0038I Full problem 2232 rows 1246570 columns, reduced to 2001 rows 3814 columns
+Cbc0038I Mini branch and bound did not improve solution (179.82 seconds)
+Cbc0038I Round again with cutoff of 2.22544e+09
+Cbc0038I Pass  52: suminf.   56.64673 (585) obj. 2.22544e+09 iterations 216
+Cbc0038I Pass  53: suminf.   51.25423 (553) obj. 2.22544e+09 iterations 207
+Cbc0038I Pass  54: suminf.   50.62559 (550) obj. 2.22544e+09 iterations 42
+Cbc0038I Pass  55: suminf.   38.85364 (506) obj. 2.22544e+09 iterations 284
+Cbc0038I Pass  56: suminf.   30.22339 (453) obj. 2.22544e+09 iterations 440
+Cbc0038I Pass  57: suminf.   30.21432 (452) obj. 2.22544e+09 iterations 8
+Cbc0038I Pass  58: suminf.   24.18715 (405) obj. 2.22544e+09 iterations 332
+Cbc0038I Pass  59: suminf.   24.17848 (406) obj. 2.22544e+09 iterations 7
+Cbc0038I Pass  60: suminf.   19.25477 (356) obj. 2.22544e+09 iterations 362
+Cbc0038I Pass  61: suminf.   19.25132 (356) obj. 2.22544e+09 iterations 4
+Cbc0038I Pass  62: suminf.   16.81270 (330) obj. 2.22544e+09 iterations 259
+Cbc0038I Pass  63: suminf.   16.81245 (330) obj. 2.22544e+09 iterations 1
+Cbc0038I Pass  64: suminf.   15.26459 (319) obj. 2.22544e+09 iterations 100
+Cbc0038I Pass  65: suminf.   15.26177 (319) obj. 2.22544e+09 iterations 2
+Cbc0038I Pass  66: suminf.   12.58089 (265) obj. 2.22544e+09 iterations 334
+Cbc0038I Pass  67: suminf.   12.57550 (269) obj. 2.22544e+09 iterations 14
+Cbc0038I Pass  68: suminf.   10.22185 (238) obj. 2.22544e+09 iterations 371
+Cbc0038I Pass  69: suminf.   10.20597 (241) obj. 2.22544e+09 iterations 7
+Cbc0038I Pass  70: suminf.    9.42187 (234) obj. 2.22544e+09 iterations 113
+Cbc0038I Pass  71: suminf.    9.41304 (234) obj. 2.22544e+09 iterations 6
+Cbc0038I Pass  72: suminf.    9.33900 (224) obj. 2.22544e+09 iterations 138
+Cbc0038I Pass  73: suminf.    9.32390 (226) obj. 2.22544e+09 iterations 5
+Cbc0038I Pass  74: suminf.    9.08500 (217) obj. 2.22544e+09 iterations 161
+Cbc0038I Pass  75: suminf.    9.06042 (220) obj. 2.22544e+09 iterations 15
+Cbc0038I Pass  76: suminf.    8.94110 (222) obj. 2.22544e+09 iterations 193
+Cbc0038I Pass  77: suminf.    8.92339 (224) obj. 2.22544e+09 iterations 6
+Cbc0038I Pass  78: suminf.    9.00734 (221) obj. 2.22544e+09 iterations 153
+Cbc0038I Pass  79: suminf.    8.99582 (221) obj. 2.22544e+09 iterations 2
+Cbc0038I Pass  80: suminf.    9.05314 (215) obj. 2.225

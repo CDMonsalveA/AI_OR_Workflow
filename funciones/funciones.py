@@ -235,6 +235,32 @@ def actualizar_resultados_sin_clusterizar(
         y.to_excel(writer, sheet_name="Y")
     return resultados
 
+def actualizar_resultados_sin_clusterizar_a(
+    resultados, key, value, cluster_id, sin_clusterizar
+):
+    resultados["tipo_de_datos"].append(key)
+    resultados["tipo_de_solucion"].append("sin clusterizar")
+    resultados["algoritmo_de_clusterizacion"].append("ninguno")
+    resultados["costo_total"].append(sin_clusterizar[0])
+    resultados["cantidad_de_centros_de_distribucion"].append(sin_clusterizar[1])
+    resultados["tiempo_de_ejecucion"].append(sin_clusterizar[2])
+    resultados["suma_de_demanda_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_demanda_satisfecha_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_capacidad_por_cluster"].append(sin_clusterizar[5])
+    resultados["suma_de_capacidad_utilizada_por_cluster"].append(sin_clusterizar[6])
+    resultados["estado"].append(sin_clusterizar[7])
+    # x = sin_clusterizar[8]
+    # y = sin_clusterizar[9]
+    # y["cluster"] = cluster_id
+    # y["municipio"] = pd.read_csv(f"data/{key}/municipios.csv", index_col=0).loc[
+    #     value.index, "municipio"
+    # ]
+    # with pd.ExcelWriter(
+    #     f"resultados/tablas/solucionar_cflp/soluciones/{key}-sin-clusterizar.xlsx"
+    # ) as writer:
+    #     x.to_excel(writer, sheet_name="X")
+    #     y.to_excel(writer, sheet_name="Y")
+    return resultados
 
 def crear_diccionario_de_resultados():
     resultados = {
@@ -418,18 +444,18 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         print("    Solución ingenua procesada satisfactoriamente")
 
         ####* Solución sin clusterizar ####
-        # cluster_id = 1
-        # print("    Procesando solución sin clusterizar", end="\r")
-        # sin_clusterizar = solucion_cflp_MC(
-        #     value,
-        #     costos,
-        #     tiempo_limite=tiempo_maximo,
-        #     log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
-        # )
-        # resultados = actualizar_resultados_sin_clusterizar(
-        #     resultados, key, value, cluster_id, sin_clusterizar
-        # )
-        # print("    Solución sin clusterizar procesada satisfactoriamente")
+        cluster_id = 1
+        print("    Procesando solución sin clusterizar", end="\r")
+        sin_clusterizar = solucion_cflp_MC(
+            value,
+            costos,
+            tiempo_limite=tiempo_maximo,
+            log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
+        )
+        resultados = actualizar_resultados_sin_clusterizar(
+            resultados, key, value, cluster_id, sin_clusterizar
+        )
+        print("    Solución sin clusterizar procesada satisfactoriamente")
 
         ####* Solución clusterizada ####
         print("    Procesando solución clusterizada", end="\r")
@@ -466,7 +492,7 @@ def solucion_clusterizada(tiempo_maximo, key, value, costos, modelo):
             tiempo_limite=tiempo_maximo,
             log_path=f"resultados/logs/cflp-{key}-{modelo}-{cluster_id}.log",
         )
-        resultados_de_cluster = actualizar_resultados_sin_clusterizar(
+        resultados_de_cluster = actualizar_resultados_sin_clusterizar_a(
             resultados_de_cluster,
             key,
             cluster_value,

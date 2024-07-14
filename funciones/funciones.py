@@ -10,6 +10,7 @@ import warnings
 import numpy as np
 import pandas as pd
 import pulp as pl
+from scipy import cluster
 
 
 def actualizar_resutados_ingenuos(resultados, key, ingenua):
@@ -444,18 +445,18 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         print("    Solución ingenua procesada satisfactoriamente")
 
         ####* Solución sin clusterizar ####
-        cluster_id = 1
-        print("    Procesando solución sin clusterizar", end="\r")
-        sin_clusterizar = solucion_cflp_MC(
-            value,
-            costos,
-            tiempo_limite=tiempo_maximo,
-            log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
-        )
-        resultados = actualizar_resultados_sin_clusterizar(
-            resultados, key, value, cluster_id, sin_clusterizar
-        )
-        print("    Solución sin clusterizar procesada satisfactoriamente")
+        # cluster_id = 1
+        # print("    Procesando solución sin clusterizar", end="\r")
+        # sin_clusterizar = solucion_cflp_MC(
+        #     value,
+        #     costos,
+        #     tiempo_limite=tiempo_maximo,
+        #     log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
+        # )
+        # resultados = actualizar_resultados_sin_clusterizar(
+        #     resultados, key, value, cluster_id, sin_clusterizar
+        # )
+        # print("    Solución sin clusterizar procesada satisfactoriamente")
 
         ####* Solución clusterizada ####
         print("    Procesando solución clusterizada", end="\r")
@@ -499,6 +500,12 @@ def solucion_clusterizada(tiempo_maximo, key, value, costos, modelo):
             cluster_id,
             cluster_solucion,
         )
+        df_y_to_add = cluster_solucion[9]
+        df_y_to_add["cluster"] = cluster_id
+        df_y_to_add["municipio"] = pd.read_csv(
+            f"data/{key}/municipios.csv", index_col=0
+        ).loc[cluster_value.index, "municipio"]
+
         df_y = df_y.combine_first(cluster_solucion[9])
         df_x = df_x.combine_first(cluster_solucion[8])
     return resultados_de_cluster, df_y, df_x

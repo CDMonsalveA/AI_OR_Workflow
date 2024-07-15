@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/1d7e9c1332ce47d5a40a767df60c86bd-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/1d7e9c1332ce47d5a40a767df60c86bd-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/bc998d7f596740bfb33b3085e3134cef-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/bc998d7f596740bfb33b3085e3134cef-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 65 COLUMNS
@@ -95,9 +95,9 @@ Cbc0038I Pass  61: suminf.    2.56985 (9) obj. 8.00895e+07 iterations 11
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 848 continuous
 Cbc0038I Full problem 60 rows 930 columns, reduced to 39 rows 59 columns
-Cbc0038I Mini branch and bound did not improve solution (0.06 seconds)
-Cbc0038I After 0.06 seconds - Feasibility pump exiting with objective of 9.29346e+07 - took 0.05 seconds
-Cbc0012I Integer solution of 92934647 found by feasibility pump after 0 iterations and 0 nodes (0.06 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.05 seconds)
+Cbc0038I After 0.05 seconds - Feasibility pump exiting with objective of 9.29346e+07 - took 0.05 seconds
+Cbc0012I Integer solution of 92934647 found by feasibility pump after 0 iterations and 0 nodes (0.05 seconds)
 Cbc0031I 33 added rows had average density of 32.727273
 Cbc0013I At root node, 33 cuts changed objective from 28709100 to 92900914 in 3 passes
 Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
@@ -107,7 +107,7 @@ Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cu
 Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
 Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
 Cbc0014I Cut generator 6 (TwoMirCuts) - 34 row cuts average 33.5 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is 1
-Cbc0001I Search completed - best objective 92934646.93536057, took 34 iterations and 0 nodes (0.07 seconds)
+Cbc0001I Search completed - best objective 92934646.93536057, took 34 iterations and 0 nodes (0.06 seconds)
 Cbc0032I Strong branching done 4 times (4 iterations), fathomed 1 nodes and fixed 0 variables
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 2.87091e+07 to 9.43305e+07
@@ -129,5 +129,5 @@ Time (CPU seconds):             0.07
 Time (Wallclock seconds):       0.07
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.08   (Wallclock seconds):       0.08
+Total time (CPU seconds):       0.07   (Wallclock seconds):       0.07
 

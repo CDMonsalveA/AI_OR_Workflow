@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/ace2dbeff58544cb8f5d1a2686f6bf25-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/ace2dbeff58544cb8f5d1a2686f6bf25-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/fd4e8ebd7093473ca7eb4d30018a9d37-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/fd4e8ebd7093473ca7eb4d30018a9d37-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 175 COLUMNS
@@ -59,7 +59,7 @@ Cbc0038I Rounding solution of 2.95355e+08 is better than previous of 3.15114e+08
 
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 7022 continuous
 Cbc0038I Full problem 170 rows 7310 columns, reduced to 138 rows 246 columns
-Cbc0038I Mini branch and bound improved solution from 2.95355e+08 to 2.79262e+08 (0.22 seconds)
+Cbc0038I Mini branch and bound improved solution from 2.95355e+08 to 2.79262e+08 (0.21 seconds)
 Cbc0038I Freeing continuous variables gives a solution of 2.71366e+08
 Cbc0038I Round again with cutoff of 2.37015e+08
 Cbc0038I Pass  32: suminf.    9.29438 (41) obj. 2.37015e+08 iterations 16
@@ -95,8 +95,8 @@ Cbc0038I Pass  61: suminf.    7.22170 (25) obj. 2.37015e+08 iterations 8
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 7059 continuous
 Cbc0038I Full problem 170 rows 7310 columns, reduced to 116 rows 189 columns
-Cbc0038I Mini branch and bound did not improve solution (0.34 seconds)
-Cbc0038I After 0.34 seconds - Feasibility pump exiting with objective of 2.71366e+08 - took 0.30 seconds
+Cbc0038I Mini branch and bound did not improve solution (0.33 seconds)
+Cbc0038I After 0.33 seconds - Feasibility pump exiting with objective of 2.71366e+08 - took 0.30 seconds
 Cbc0012I Integer solution of 2.7136611e+08 found by feasibility pump after 0 iterations and 0 nodes (0.34 seconds)
 Cbc0012I Integer solution of 2.6989441e+08 found by DiveCoefficient after 128 iterations and 0 nodes (0.50 seconds)
 Cbc0031I 105 added rows had average density of 112.52381
@@ -106,14 +106,14 @@ Cbc0014I Cut generator 1 (Gomory) - 104 row cuts average 108.7 elements, 0 colum
 Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
 Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
 Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
-Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.014 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.015 seconds - new frequency is -100
 Cbc0014I Cut generator 6 (TwoMirCuts) - 117 row cuts average 119.1 elements, 0 column cuts (0 active)  in 0.011 seconds - new frequency is 1
 Cbc0010I After 0 nodes, 1 on tree, 2.6989441e+08 best solution, best possible 2.6349168e+08 (0.51 seconds)
 Cbc0012I Integer solution of 2.6795605e+08 found by DiveCoefficient after 138 iterations and 2 nodes (0.54 seconds)
 Cbc0012I Integer solution of 2.6767495e+08 found by DiveCoefficient after 143 iterations and 3 nodes (0.57 seconds)
 Cbc0012I Integer solution of 2.6664462e+08 found by DiveCoefficient after 146 iterations and 4 nodes (0.60 seconds)
 Cbc0012I Integer solution of 2.6646382e+08 found by DiveCoefficient after 153 iterations and 5 nodes (0.63 seconds)
-Cbc0012I Integer solution of 2.652536e+08 found by DiveCoefficient after 156 iterations and 6 nodes (0.65 seconds)
+Cbc0012I Integer solution of 2.652536e+08 found by DiveCoefficient after 156 iterations and 6 nodes (0.64 seconds)
 Cbc0012I Integer solution of 2.6488812e+08 found by DiveCoefficient after 159 iterations and 9 nodes (0.67 seconds)
 Cbc0001I Search completed - best objective 264888123.7371249, took 217 iterations and 16 nodes (0.75 seconds)
 Cbc0032I Strong branching done 144 times (300 iterations), fathomed 3 nodes and fixed 17 variables
@@ -124,8 +124,8 @@ Gomory was tried 6 times and created 104 cuts of which 0 were active after addin
 Knapsack was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
 Clique was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 MixedIntegerRounding2 was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
-FlowCover was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.014 seconds)
-TwoMirCuts was tried 18 times and created 120 cuts of which 0 were active after adding rounds of cuts (0.014 seconds)
+FlowCover was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.015 seconds)
+TwoMirCuts was tried 18 times and created 120 cuts of which 0 were active after adding rounds of cuts (0.015 seconds)
 ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 
 Result - Optimal solution found
@@ -133,9 +133,9 @@ Result - Optimal solution found
 Objective value:                264888123.73712489
 Enumerated nodes:               16
 Total iterations:               217
-Time (CPU seconds):             0.73
+Time (CPU seconds):             0.76
 Time (Wallclock seconds):       0.76
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.75   (Wallclock seconds):       0.78
+Total time (CPU seconds):       0.78   (Wallclock seconds):       0.78
 

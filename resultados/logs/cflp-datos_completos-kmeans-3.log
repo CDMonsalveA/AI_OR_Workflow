@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/6bee7263fd1d421fb5567a0d5d7a1267-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/6bee7263fd1d421fb5567a0d5d7a1267-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/4eb9158ae0964fc9a93251eec0a63425-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/4eb9158ae0964fc9a93251eec0a63425-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 139 COLUMNS
@@ -71,9 +71,9 @@ Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 4363 continuous
 Cbc0038I Full problem 134 rows 4556 columns, reduced to 97 rows 147 columns
 Cbc0038I Mini branch and bound did not improve solution (0.21 seconds)
-Cbc0038I After 0.21 seconds - Feasibility pump exiting with objective of 1.83062e+08 - took 0.18 seconds
-Cbc0012I Integer solution of 1.8306249e+08 found by feasibility pump after 0 iterations and 0 nodes (0.22 seconds)
-Cbc0012I Integer solution of 1.7870183e+08 found by DiveCoefficient after 166 iterations and 0 nodes (0.41 seconds)
+Cbc0038I After 0.21 seconds - Feasibility pump exiting with objective of 1.83062e+08 - took 0.17 seconds
+Cbc0012I Integer solution of 1.8306249e+08 found by feasibility pump after 0 iterations and 0 nodes (0.21 seconds)
+Cbc0012I Integer solution of 1.7870183e+08 found by DiveCoefficient after 166 iterations and 0 nodes (0.40 seconds)
 Cbc0031I 87 added rows had average density of 96.321839
 Cbc0013I At root node, 87 cuts changed objective from 52797805 to 1.7012223e+08 in 19 passes
 Cbc0014I Cut generator 0 (Probing) - 1 row cuts average 67.0 elements, 0 column cuts (0 active)  in 0.057 seconds - new frequency is -100
@@ -84,13 +84,13 @@ Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elemen
 Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.035 seconds - new frequency is -100
 Cbc0014I Cut generator 6 (TwoMirCuts) - 104 row cuts average 105.1 elements, 0 column cuts (0 active)  in 0.008 seconds - new frequency is 1
 Cbc0010I After 0 nodes, 1 on tree, 1.7870183e+08 best solution, best possible 1.7012223e+08 (0.41 seconds)
-Cbc0012I Integer solution of 1.761849e+08 found by DiveCoefficient after 167 iterations and 1 nodes (0.42 seconds)
-Cbc0012I Integer solution of 1.7583661e+08 found by DiveCoefficient after 168 iterations and 2 nodes (0.43 seconds)
-Cbc0012I Integer solution of 1.7444351e+08 found by DiveCoefficient after 169 iterations and 3 nodes (0.45 seconds)
-Cbc0012I Integer solution of 1.7214268e+08 found by DiveCoefficient after 170 iterations and 4 nodes (0.46 seconds)
-Cbc0012I Integer solution of 1.7180011e+08 found by DiveCoefficient after 175 iterations and 5 nodes (0.48 seconds)
+Cbc0012I Integer solution of 1.761849e+08 found by DiveCoefficient after 167 iterations and 1 nodes (0.41 seconds)
+Cbc0012I Integer solution of 1.7583661e+08 found by DiveCoefficient after 168 iterations and 2 nodes (0.42 seconds)
+Cbc0012I Integer solution of 1.7444351e+08 found by DiveCoefficient after 169 iterations and 3 nodes (0.44 seconds)
+Cbc0012I Integer solution of 1.7214268e+08 found by DiveCoefficient after 170 iterations and 4 nodes (0.45 seconds)
+Cbc0012I Integer solution of 1.7180011e+08 found by DiveCoefficient after 175 iterations and 5 nodes (0.47 seconds)
 Cbc0012I Integer solution of 1.7088714e+08 found by rounding after 189 iterations and 8 nodes (0.50 seconds)
-Cbc0001I Search completed - best objective 170887139.5260131, took 238 iterations and 18 nodes (0.52 seconds)
+Cbc0001I Search completed - best objective 170887139.5260131, took 238 iterations and 18 nodes (0.51 seconds)
 Cbc0032I Strong branching done 104 times (406 iterations), fathomed 1 nodes and fixed 1 variables
 Cbc0035I Maximum depth 8, 2 variables fixed on reduced cost
 Cuts at root node changed objective from 5.27978e+07 to 1.70122e+08
@@ -108,9 +108,9 @@ Result - Optimal solution found
 Objective value:                170887139.52601311
 Enumerated nodes:               18
 Total iterations:               238
-Time (CPU seconds):             0.51
-Time (Wallclock seconds):       0.53
+Time (CPU seconds):             0.50
+Time (Wallclock seconds):       0.52
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.51   (Wallclock seconds):       0.54
+Total time (CPU seconds):       0.51   (Wallclock seconds):       0.53
 

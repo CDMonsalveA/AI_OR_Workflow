@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/ace4a452a0b145c7b22d6a1616cc1765-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/ace4a452a0b145c7b22d6a1616cc1765-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/0e3e11d51e834d82ac579490b3b2b2c3-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/0e3e11d51e834d82ac579490b3b2b2c3-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 95 COLUMNS
@@ -71,10 +71,10 @@ Cbc0038I Pass  38: suminf.    3.87809 (17) obj. 1.0946e+08 iterations 0
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 1940 continuous
 Cbc0038I Full problem 90 rows 2070 columns, reduced to 58 rows 94 columns
-Cbc0038I Mini branch and bound did not improve solution (0.16 seconds)
-Cbc0038I After 0.16 seconds - Feasibility pump exiting with objective of 1.25743e+08 - took 0.12 seconds
-Cbc0012I Integer solution of 1.2574271e+08 found by feasibility pump after 0 iterations and 0 nodes (0.16 seconds)
-Cbc0012I Integer solution of 1.2402017e+08 found by DiveCoefficient after 100 iterations and 0 nodes (0.22 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.15 seconds)
+Cbc0038I After 0.15 seconds - Feasibility pump exiting with objective of 1.25743e+08 - took 0.12 seconds
+Cbc0012I Integer solution of 1.2574271e+08 found by feasibility pump after 0 iterations and 0 nodes (0.15 seconds)
+Cbc0012I Integer solution of 1.2402017e+08 found by DiveCoefficient after 100 iterations and 0 nodes (0.21 seconds)
 Cbc0031I 60 added rows had average density of 63
 Cbc0013I At root node, 60 cuts changed objective from 44327189 to 1.2049658e+08 in 13 passes
 Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.013 seconds - new frequency is -100
@@ -85,11 +85,11 @@ Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 4 row cuts average 135.0 elem
 Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.010 seconds - new frequency is -100
 Cbc0014I Cut generator 6 (TwoMirCuts) - 79 row cuts average 70.6 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is 1
 Cbc0010I After 0 nodes, 1 on tree, 1.2402017e+08 best solution, best possible 1.2049658e+08 (0.22 seconds)
-Cbc0012I Integer solution of 1.2381748e+08 found by DiveCoefficient after 102 iterations and 1 nodes (0.23 seconds)
+Cbc0012I Integer solution of 1.2381748e+08 found by DiveCoefficient after 102 iterations and 1 nodes (0.22 seconds)
 Cbc0012I Integer solution of 1.2312425e+08 found by DiveCoefficient after 108 iterations and 1 nodes (0.23 seconds)
 Cbc0012I Integer solution of 1.2273425e+08 found by DiveCoefficient after 111 iterations and 4 nodes (0.26 seconds)
 Cbc0012I Integer solution of 1.2212099e+08 found by DiveCoefficient after 114 iterations and 6 nodes (0.28 seconds)
-Cbc0016I Integer solution of 1.2085139e+08 found by strong branching after 124 iterations and 7 nodes (0.29 seconds)
+Cbc0016I Integer solution of 1.2085139e+08 found by strong branching after 124 iterations and 7 nodes (0.28 seconds)
 Cbc0001I Search completed - best objective 120851386.4955013, took 149 iterations and 14 nodes (0.29 seconds)
 Cbc0032I Strong branching done 72 times (153 iterations), fathomed 1 nodes and fixed 0 variables
 Cbc0035I Maximum depth 6, 0 variables fixed on reduced cost
@@ -100,7 +100,7 @@ Knapsack was tried 13 times and created 0 cuts of which 0 were active after addi
 Clique was tried 13 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 MixedIntegerRounding2 was tried 13 times and created 4 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
 FlowCover was tried 13 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.010 seconds)
-TwoMirCuts was tried 21 times and created 82 cuts of which 0 were active after adding rounds of cuts (0.006 seconds)
+TwoMirCuts was tried 21 times and created 82 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
 ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 
 Result - Optimal solution found
@@ -108,9 +108,9 @@ Result - Optimal solution found
 Objective value:                120851386.49550125
 Enumerated nodes:               14
 Total iterations:               149
-Time (CPU seconds):             0.26
-Time (Wallclock seconds):       0.30
+Time (CPU seconds):             0.27
+Time (Wallclock seconds):       0.29
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.26   (Wallclock seconds):       0.30
+Total time (CPU seconds):       0.28   (Wallclock seconds):       0.30
 

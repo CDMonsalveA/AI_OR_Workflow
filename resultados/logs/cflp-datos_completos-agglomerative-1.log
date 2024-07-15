@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/39fea9d86b5b469fa2d498d514befc83-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/39fea9d86b5b469fa2d498d514befc83-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/91e4a329c3a54984a85574ee53ad0fce-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/91e4a329c3a54984a85574ee53ad0fce-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 191 COLUMNS
@@ -100,60 +100,60 @@ Cbc0012I Integer solution of 2.9149802e+08 found by feasibility pump after 0 ite
 Cbc0012I Integer solution of 2.8445564e+08 found by DiveCoefficient after 126 iterations and 0 nodes (0.58 seconds)
 Cbc0031I 105 added rows had average density of 112.47619
 Cbc0013I At root node, 105 cuts changed objective from 1.0661436e+08 to 2.7027282e+08 in 6 passes
-Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.032 seconds - new frequency is -100
+Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.030 seconds - new frequency is -100
 Cbc0014I Cut generator 1 (Gomory) - 105 row cuts average 106.3 elements, 0 column cuts (0 active)  in 0.011 seconds - new frequency is -100
 Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
 Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
-Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
-Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.017 seconds - new frequency is -100
-Cbc0014I Cut generator 6 (TwoMirCuts) - 115 row cuts average 114.0 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is 1
-Cbc0010I After 0 nodes, 1 on tree, 2.8445564e+08 best solution, best possible 2.7027282e+08 (0.60 seconds)
-Cbc0012I Integer solution of 2.8429916e+08 found by DiveCoefficient after 128 iterations and 1 nodes (0.63 seconds)
-Cbc0012I Integer solution of 2.8406758e+08 found by DiveCoefficient after 131 iterations and 2 nodes (0.70 seconds)
-Cbc0012I Integer solution of 2.8151199e+08 found by DiveCoefficient after 132 iterations and 3 nodes (0.75 seconds)
-Cbc0012I Integer solution of 2.810173e+08 found by DiveCoefficient after 135 iterations and 5 nodes (0.84 seconds)
-Cbc0012I Integer solution of 2.8035342e+08 found by DiveCoefficient after 139 iterations and 7 nodes (0.89 seconds)
-Cbc0012I Integer solution of 2.8027494e+08 found by DiveCoefficient after 140 iterations and 8 nodes (0.91 seconds)
-Cbc0012I Integer solution of 2.7994761e+08 found by DiveCoefficient after 172 iterations and 21 nodes (1.01 seconds)
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.006 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 115 row cuts average 114.0 elements, 0 column cuts (0 active)  in 0.015 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 2.8445564e+08 best solution, best possible 2.7027282e+08 (0.59 seconds)
+Cbc0012I Integer solution of 2.8429916e+08 found by DiveCoefficient after 128 iterations and 1 nodes (0.62 seconds)
+Cbc0012I Integer solution of 2.8406758e+08 found by DiveCoefficient after 131 iterations and 2 nodes (0.69 seconds)
+Cbc0012I Integer solution of 2.8151199e+08 found by DiveCoefficient after 132 iterations and 3 nodes (0.74 seconds)
+Cbc0012I Integer solution of 2.810173e+08 found by DiveCoefficient after 135 iterations and 5 nodes (0.83 seconds)
+Cbc0012I Integer solution of 2.8035342e+08 found by DiveCoefficient after 139 iterations and 7 nodes (0.88 seconds)
+Cbc0012I Integer solution of 2.8027494e+08 found by DiveCoefficient after 140 iterations and 8 nodes (0.90 seconds)
+Cbc0012I Integer solution of 2.7994761e+08 found by DiveCoefficient after 172 iterations and 21 nodes (1.00 seconds)
 Cbc0012I Integer solution of 2.7990548e+08 found by DiveCoefficient after 175 iterations and 22 nodes (1.02 seconds)
-Cbc0012I Integer solution of 2.7953746e+08 found by DiveCoefficient after 176 iterations and 23 nodes (1.05 seconds)
-Cbc0012I Integer solution of 2.7946867e+08 found by DiveCoefficient after 186 iterations and 28 nodes (1.09 seconds)
-Cbc0012I Integer solution of 2.7892693e+08 found by DiveCoefficient after 200 iterations and 33 nodes (1.14 seconds)
+Cbc0012I Integer solution of 2.7953746e+08 found by DiveCoefficient after 176 iterations and 23 nodes (1.04 seconds)
+Cbc0012I Integer solution of 2.7946867e+08 found by DiveCoefficient after 186 iterations and 28 nodes (1.08 seconds)
+Cbc0012I Integer solution of 2.7892693e+08 found by DiveCoefficient after 200 iterations and 33 nodes (1.13 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 146 rows 4939 columns
-Cbc0012I Integer solution of 2.7884988e+08 found by DiveCoefficient after 268 iterations and 61 nodes (1.31 seconds)
+Cbc0012I Integer solution of 2.7884988e+08 found by DiveCoefficient after 268 iterations and 61 nodes (1.30 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 143 rows 4654 columns
-Cbc0016I Integer solution of 2.7858804e+08 found by strong branching after 403 iterations and 100 nodes (1.51 seconds)
-Cbc0010I After 100 nodes, 49 on tree, 2.7858804e+08 best solution, best possible 2.7027282e+08 (1.51 seconds)
+Cbc0016I Integer solution of 2.7858804e+08 found by strong branching after 403 iterations and 100 nodes (1.50 seconds)
+Cbc0010I After 100 nodes, 49 on tree, 2.7858804e+08 best solution, best possible 2.7027282e+08 (1.50 seconds)
 Cbc0004I Integer solution of 2.7831732e+08 found after 453 iterations and 113 nodes (1.54 seconds)
-Cbc0004I Integer solution of 2.7786277e+08 found after 544 iterations and 144 nodes (1.61 seconds)
+Cbc0004I Integer solution of 2.7786277e+08 found after 544 iterations and 144 nodes (1.60 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 145 rows 4846 columns
-Cbc0010I After 200 nodes, 39 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (1.76 seconds)
+Cbc0010I After 200 nodes, 39 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (1.75 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 146 rows 4939 columns
-Cbc0010I After 300 nodes, 28 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (2.11 seconds)
+Cbc0010I After 300 nodes, 28 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (2.10 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 146 rows 4941 columns
-Cbc0010I After 400 nodes, 10 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (2.58 seconds)
+Cbc0010I After 400 nodes, 10 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (2.56 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 145 rows 4845 columns
-Cbc0010I After 500 nodes, 18 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (3.16 seconds)
-Cbc0010I After 600 nodes, 16 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (3.64 seconds)
+Cbc0010I After 500 nodes, 18 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (3.14 seconds)
+Cbc0010I After 600 nodes, 16 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (3.61 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 148 rows 5128 columns
-Cbc0010I After 700 nodes, 7 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (4.18 seconds)
-Cbc0010I After 800 nodes, 6 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (4.75 seconds)
-Cbc0010I After 900 nodes, 6 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (5.72 seconds)
+Cbc0010I After 700 nodes, 7 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (4.15 seconds)
+Cbc0010I After 800 nodes, 6 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (4.71 seconds)
+Cbc0010I After 900 nodes, 6 on tree, 2.7786277e+08 best solution, best possible 2.7027282e+08 (5.65 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 150 rows 5319 columns
-Cbc0010I After 1000 nodes, 7 on tree, 2.7786277e+08 best solution, best possible 2.7236201e+08 (6.53 seconds)
-Cbc0010I After 1100 nodes, 4 on tree, 2.7786277e+08 best solution, best possible 2.7236201e+08 (7.22 seconds)
+Cbc0010I After 1000 nodes, 7 on tree, 2.7786277e+08 best solution, best possible 2.7236201e+08 (6.45 seconds)
+Cbc0010I After 1100 nodes, 4 on tree, 2.7786277e+08 best solution, best possible 2.7236201e+08 (7.14 seconds)
 Cbc0038I Full problem 186 rows 8742 columns, reduced to 149 rows 5225 columns
-Cbc0001I Search completed - best objective 277862765.7037648, took 4026 iterations and 1166 nodes (7.86 seconds)
+Cbc0001I Search completed - best objective 277862765.7037648, took 4026 iterations and 1166 nodes (7.79 seconds)
 Cbc0032I Strong branching done 2098 times (5389 iterations), fathomed 139 nodes and fixed 330 variables
 Cbc0035I Maximum depth 19, 486 variables fixed on reduced cost
 Cuts at root node changed objective from 1.06614e+08 to 2.70273e+08
-Probing was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.032 seconds)
+Probing was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.030 seconds)
 Gomory was tried 6 times and created 105 cuts of which 0 were active after adding rounds of cuts (0.011 seconds)
 Knapsack was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
 Clique was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
-MixedIntegerRounding2 was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.005 seconds)
-FlowCover was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.017 seconds)
-TwoMirCuts was tried 784 times and created 115 cuts of which 0 were active after adding rounds of cuts (0.181 seconds)
+MixedIntegerRounding2 was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.006 seconds)
+FlowCover was tried 6 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.016 seconds)
+TwoMirCuts was tried 784 times and created 115 cuts of which 0 were active after adding rounds of cuts (0.182 seconds)
 ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 
 Result - Optimal solution found
@@ -161,9 +161,9 @@ Result - Optimal solution found
 Objective value:                277862765.70376480
 Enumerated nodes:               1166
 Total iterations:               4026
-Time (CPU seconds):             7.81
-Time (Wallclock seconds):       7.88
+Time (CPU seconds):             7.75
+Time (Wallclock seconds):       7.81
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       7.82   (Wallclock seconds):       7.90
+Total time (CPU seconds):       7.77   (Wallclock seconds):       7.83
 

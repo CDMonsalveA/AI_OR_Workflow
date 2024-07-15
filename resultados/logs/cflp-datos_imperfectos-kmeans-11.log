@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/17c317e136d645889dc9d219b42ff101-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/17c317e136d645889dc9d219b42ff101-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/86f806ab99054ef992556d503820d3df-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/86f806ab99054ef992556d503820d3df-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 53 COLUMNS
@@ -105,9 +105,9 @@ Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column 
 Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
 Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
 Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
-Cbc0014I Cut generator 6 (TwoMirCuts) - 26 row cuts average 28.6 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1
-Cbc0016I Integer solution of 70138563 found by strong branching after 35 iterations and 0 nodes (0.04 seconds)
-Cbc0001I Search completed - best objective 70138563.04889242, took 35 iterations and 0 nodes (0.04 seconds)
+Cbc0014I Cut generator 6 (TwoMirCuts) - 26 row cuts average 28.6 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is 1
+Cbc0016I Integer solution of 70138563 found by strong branching after 35 iterations and 0 nodes (0.03 seconds)
+Cbc0001I Search completed - best objective 70138563.04889242, took 35 iterations and 0 nodes (0.03 seconds)
 Cbc0032I Strong branching done 4 times (9 iterations), fathomed 1 nodes and fixed 0 variables
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 2.50814e+07 to 7.23786e+07
@@ -117,7 +117,7 @@ Knapsack was tried 3 times and created 0 cuts of which 0 were active after addin
 Clique was tried 3 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 MixedIntegerRounding2 was tried 3 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 FlowCover was tried 3 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
-TwoMirCuts was tried 3 times and created 26 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 3 times and created 26 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
 ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 
 Result - Optimal solution found

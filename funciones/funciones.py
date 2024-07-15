@@ -445,24 +445,28 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         print("    Solución ingenua procesada satisfactoriamente")
 
         ####* Solución sin clusterizar ####
-        # cluster_id = 1
-        # print("    Procesando solución sin clusterizar", end="\r")
-        # sin_clusterizar = solucion_cflp_MC(
-        #     value,
-        #     costos,
-        #     tiempo_limite=tiempo_maximo,
-        #     log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
-        # )
-        # resultados = actualizar_resultados_sin_clusterizar(
-        #     resultados, key, value, cluster_id, sin_clusterizar
-        # )
-        # print("    Solución sin clusterizar procesada satisfactoriamente")
+        cluster_id = 1
+        print("    Procesando solución sin clusterizar", end="\r")
+        sin_clusterizar = solucion_cflp_MC(
+            value,
+            costos,
+            tiempo_limite=tiempo_maximo,
+            log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
+        )
+        resultados = actualizar_resultados_sin_clusterizar(
+            resultados, key, value, cluster_id, sin_clusterizar
+        )
+        print("    Solución sin clusterizar procesada satisfactoriamente")
 
         ####* Solución clusterizada ####
         print("    Procesando solución clusterizada", end="\r")
         lista_modelos = ["kmeans", "som", "agglomerative", "dbscan"]
         for modelo in lista_modelos:
             print(f"        Procesando modelo {modelo}")
+            if modelo == "bdscan" and key == "datos_completos":
+                tiempo_maximo = tiempo_maximo / 6
+            if modelo == "bdscan" and key == "datos_imperfectos":
+                tiempo_maximo = tiempo_maximo / 20
             resultados_de_cluster, df_y, df_x = solucion_clusterizada(
                 tiempo_maximo, key, value, costos, modelo
             )

@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/a14778b49f5e43e9bde754502d20029b-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/a14778b49f5e43e9bde754502d20029b-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/a3153228a1594e21a4a931e90b72f0e2-pulp.mps -sec 3600 -timeMode elapsed -branch -printingOptions all -solution /tmp/a3153228a1594e21a4a931e90b72f0e2-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 55 COLUMNS
@@ -92,9 +92,9 @@ Cbc0038I Pass  60: suminf.    1.95533 (6) obj. 6.76238e+07 iterations 0
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 0 integers at bound fixed and 581 continuous
 Cbc0038I Full problem 50 rows 650 columns, reduced to 29 rows 45 columns
-Cbc0038I Mini branch and bound did not improve solution (0.03 seconds)
-Cbc0038I After 0.03 seconds - Feasibility pump exiting with objective of 7.92505e+07 - took 0.03 seconds
-Cbc0012I Integer solution of 79250543 found by feasibility pump after 0 iterations and 0 nodes (0.03 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.04 seconds)
+Cbc0038I After 0.04 seconds - Feasibility pump exiting with objective of 7.92505e+07 - took 0.03 seconds
+Cbc0012I Integer solution of 79250543 found by feasibility pump after 0 iterations and 0 nodes (0.04 seconds)
 Cbc0031I 27 added rows had average density of 28.703704
 Cbc0013I At root node, 31 cuts changed objective from 27532803 to 79250543 in 6 passes
 Cbc0014I Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.002 seconds - new frequency is -100

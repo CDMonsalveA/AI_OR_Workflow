@@ -2,7 +2,7 @@ Welcome to the CBC MILP Solver
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/ed2b6186f2d74fc7b007d846ab5f510a-pulp.mps -sec 600 -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/ed2b6186f2d74fc7b007d846ab5f510a-pulp.sol (default strategy 1)
+command line - /home/cdmonsalvea/AI_OR_Workflow/.venv/lib/python3.10/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/6dc2a49e45004c888ce66f1bdb7875cd-pulp.mps -sec 600 -threads 12 -timeMode elapsed -branch -printingOptions all -solution /tmp/6dc2a49e45004c888ce66f1bdb7875cd-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 185 COLUMNS
@@ -14,7 +14,7 @@ Coin0008I MODEL read with 0 errors
 seconds was changed from 1e+100 to 600
 threads was changed from 0 to 12
 Option for timeMode changed from cpu to elapsed
-Continuous objective value is 1.20909 - 0.00 seconds
+Continuous objective value is 1.20909 - 0.01 seconds
 Cgl0004I processed model has 180 rows, 8190 columns (8190 integer (8190 of which binary)) and 16290 elements
 Cbc0038I Initial state - 90 integers unsatisfied sum - 1
 Cbc0038I Pass   1: suminf.    1.00000 (90) obj. 1.20909 iterations 0
@@ -25,7 +25,7 @@ Cbc0038I Pass   5: suminf.    0.02222 (2) obj. 106.427 iterations 20
 Cbc0038I Solution found of 108.818
 Cbc0038I Before mini branch and bound, 8100 integers at bound fixed and 0 continuous
 Cbc0038I Full problem 180 rows 8190 columns, reduced to 0 rows 0 columns
-Cbc0038I Mini branch and bound did not improve solution (0.22 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.23 seconds)
 Cbc0038I Round again with cutoff of 98.0573
 Cbc0038I Pass   6: suminf.    1.00000 (90) obj. 1.20909 iterations 0
 Cbc0038I Pass   7: suminf.    0.82222 (74) obj. 20.3396 iterations 16
@@ -96,41 +96,41 @@ Cbc0038I Pass  64: suminf.    0.47936 (36) obj. 54.365 iterations 17
 Cbc0038I No solution found this major pass
 Cbc0038I Before mini branch and bound, 8038 integers at bound fixed and 0 continuous
 Cbc0038I Mini branch and bound did not improve solution (0.43 seconds)
-Cbc0038I After 0.43 seconds - Feasibility pump exiting with objective of 67.654 - took 0.23 seconds
+Cbc0038I After 0.43 seconds - Feasibility pump exiting with objective of 67.654 - took 0.22 seconds
 Cbc0012I Integer solution of 67.654018 found by feasibility pump after 0 iterations and 0 nodes (0.43 seconds)
-Cbc0012I Integer solution of 17.833892 found by DiveCoefficient after 6920 iterations and 0 nodes (3.14 seconds)
+Cbc0012I Integer solution of 17.833892 found by DiveCoefficient after 6920 iterations and 0 nodes (2.88 seconds)
 Cbc0031I 703 added rows had average density of 19.728307
 Cbc0013I At root node, 703 cuts changed objective from 1.2090909 to 17.833892 in 22 passes
-Cbc0014I Cut generator 0 (Probing) - 762 row cuts average 2.0 elements, 0 column cuts (663 active)  in 0.605 seconds - new frequency is 1
-Cbc0014I Cut generator 1 (Gomory) - 203 row cuts average 187.4 elements, 0 column cuts (0 active)  in 0.373 seconds - new frequency is 1
-Cbc0014I Cut generator 2 (Knapsack) - 942 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.041 seconds - new frequency is 1
-Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.009 seconds - new frequency is -100
-Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 839 row cuts average 17.8 elements, 0 column cuts (0 active)  in 0.071 seconds - new frequency is 1
-Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.005 seconds - new frequency is -100
-Cbc0014I Cut generator 6 (TwoMirCuts) - 247 row cuts average 132.0 elements, 0 column cuts (0 active)  in 0.099 seconds - new frequency is 1
-Cbc0030I Thread 0 used 0 times,  waiting to start 0.17944193, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 1 used 0 times,  waiting to start 0.16304779, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 2 used 0 times,  waiting to start 0.148911, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 3 used 0 times,  waiting to start 0.1335001, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 4 used 0 times,  waiting to start 0.11904812, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 5 used 0 times,  waiting to start 0.10433507, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 6 used 0 times,  waiting to start 0.089516878, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 7 used 0 times,  waiting to start 0.074534178, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 8 used 0 times,  waiting to start 0.057188034, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 9 used 0 times,  waiting to start 0.03995204, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 10 used 0 times,  waiting to start 0.02344799, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Thread 11 used 0 times,  waiting to start 0.0069789886, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
-Cbc0030I Main thread 0 waiting for threads,  1 locks, 5.0067902e-06 locked, 0 waiting for locks
-Cbc0001I Search completed - best objective 17.83389182250066, took 6920 iterations and 0 nodes (3.38 seconds)
+Cbc0014I Cut generator 0 (Probing) - 762 row cuts average 2.0 elements, 0 column cuts (663 active)  in 0.535 seconds - new frequency is 1
+Cbc0014I Cut generator 1 (Gomory) - 203 row cuts average 187.4 elements, 0 column cuts (0 active)  in 0.350 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 942 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.037 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.008 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 839 row cuts average 17.8 elements, 0 column cuts (0 active)  in 0.060 seconds - new frequency is 1
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 247 row cuts average 132.0 elements, 0 column cuts (0 active)  in 0.093 seconds - new frequency is 1
+Cbc0030I Thread 0 used 0 times,  waiting to start 0.18064785, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0.16531205, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0.15073299, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0.13642216, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 4 used 0 times,  waiting to start 0.12098694, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 5 used 0 times,  waiting to start 0.10502791, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 6 used 0 times,  waiting to start 0.087157965, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 7 used 0 times,  waiting to start 0.06959796, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 8 used 0 times,  waiting to start 0.052896023, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 9 used 0 times,  waiting to start 0.037441969, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 10 used 0 times,  waiting to start 0.021944046, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 11 used 0 times,  waiting to start 0.0067551136, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 5.9604645e-06 locked, 9.5367432e-07 waiting for locks
+Cbc0001I Search completed - best objective 17.83389182250066, took 6920 iterations and 0 nodes (3.12 seconds)
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 1.20909 to 17.8339
-Probing was tried 286 times and created 9906 cuts of which 8619 were active after adding rounds of cuts (7.861 seconds)
-Gomory was tried 286 times and created 2639 cuts of which 0 were active after adding rounds of cuts (4.854 seconds)
-Knapsack was tried 286 times and created 12246 cuts of which 0 were active after adding rounds of cuts (0.532 seconds)
-Clique was tried 286 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.122 seconds)
-MixedIntegerRounding2 was tried 286 times and created 10907 cuts of which 0 were active after adding rounds of cuts (0.925 seconds)
-FlowCover was tried 286 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.068 seconds)
-TwoMirCuts was tried 286 times and created 3211 cuts of which 0 were active after adding rounds of cuts (1.292 seconds)
+Probing was tried 286 times and created 9906 cuts of which 8619 were active after adding rounds of cuts (6.953 seconds)
+Gomory was tried 286 times and created 2639 cuts of which 0 were active after adding rounds of cuts (4.547 seconds)
+Knapsack was tried 286 times and created 12246 cuts of which 0 were active after adding rounds of cuts (0.480 seconds)
+Clique was tried 286 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.108 seconds)
+MixedIntegerRounding2 was tried 286 times and created 10907 cuts of which 0 were active after adding rounds of cuts (0.775 seconds)
+FlowCover was tried 286 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.053 seconds)
+TwoMirCuts was tried 286 times and created 3211 cuts of which 0 were active after adding rounds of cuts (1.205 seconds)
 ZeroHalf was tried 13 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
 
 Result - Optimal solution found
@@ -138,9 +138,9 @@ Result - Optimal solution found
 Objective value:                17.83389182
 Enumerated nodes:               0
 Total iterations:               6920
-Time (CPU seconds):             3.35
-Time (Wallclock seconds):       3.40
+Time (CPU seconds):             3.04
+Time (Wallclock seconds):       3.13
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       3.36   (Wallclock seconds):       3.42
+Total time (CPU seconds):       3.06   (Wallclock seconds):       3.16
 

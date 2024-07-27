@@ -10,6 +10,7 @@ import warnings
 import numpy as np
 import pandas as pd
 import pulp as pl
+from scipy import cluster
 
 
 def actualizar_resutados_ingenuos(resultados, key, ingenua):
@@ -31,42 +32,42 @@ def actualizar_resutados_ingenuos(resultados, key, ingenua):
 
 def leer_datos_solucion_cflp(comida_per_capita):
     datos_crudos = {
-        "datos_completos": {
-            "poblacion": pd.read_csv(
-                "resultados/tablas/pronostico_poblacional/datos_completos.csv",
-                index_col=0,
-            )["Poblacion_2034"],
-            "demanda": pd.read_csv(
-                "resultados/tablas/pronostico_poblacional/datos_completos.csv",
-                index_col=0,
-            )["Poblacion_2034"].rename("demanda")
-            * comida_per_capita
-            * 7,  # 7 días de comida
-            "lat": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-                "lat"
-            ],
-            "lon": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-                "lon"
-            ],
-            "capacidad": pd.read_csv(
-                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
-            )["capacidad"],
-            "precio": pd.read_csv(
-                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
-            )["precio"],
-            "kmeans": pd.read_csv(
-                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-            )["kmeans"],
-            "som": pd.read_csv(
-                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-            )["som"],
-            "agglomerative": pd.read_csv(
-                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-            )["agglomerative"],
-            "dbscan": pd.read_csv(
-                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-            )["dbscan"],
-        },
+        # "datos_completos": {
+        #     "poblacion": pd.read_csv(
+        #         "resultados/tablas/pronostico_poblacional/datos_completos.csv",
+        #         index_col=0,
+        #     )["Poblacion_2034"],
+        #     "demanda": pd.read_csv(
+        #         "resultados/tablas/pronostico_poblacional/datos_completos.csv",
+        #         index_col=0,
+        #     )["Poblacion_2034"].rename("demanda")
+        #     * comida_per_capita
+        #     * 7,  # 7 días de comida
+        #     "lat": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
+        #         "lat"
+        #     ],
+        #     "lon": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
+        #         "lon"
+        #     ],
+        #     "capacidad": pd.read_csv(
+        #         "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+        #     )["capacidad"],
+        #     "precio": pd.read_csv(
+        #         "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+        #     )["precio"],
+        #     "kmeans": pd.read_csv(
+        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+        #     )["kmeans"],
+        #     "som": pd.read_csv(
+        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+        #     )["som"],
+        #     "agglomerative": pd.read_csv(
+        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+        #     )["agglomerative"],
+        #     "dbscan": pd.read_csv(
+        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+        #     )["dbscan"],
+        # },
         "datos_imperfectos": {
             "poblacion": pd.read_csv(
                 "resultados/tablas/pronostico_poblacional/datos_imperfectos.csv",
@@ -107,9 +108,9 @@ def leer_datos_solucion_cflp(comida_per_capita):
         },
     }
     matriz_de_costos = {
-        "datos_completos": pd.read_csv(
-            "data/datos_completos/matriz-de-costos.csv", index_col=0
-        ),
+        # "datos_completos": pd.read_csv(
+        #     "data/datos_completos/matriz-de-costos.csv", index_col=0
+        # ),
         "datos_imperfectos": pd.read_csv(
             "data/datos_imperfectos/matriz-de-costos.csv", index_col=0
         ),
@@ -235,6 +236,32 @@ def actualizar_resultados_sin_clusterizar(
         y.to_excel(writer, sheet_name="Y")
     return resultados
 
+def actualizar_resultados_sin_clusterizar_a(
+    resultados, key, value, cluster_id, sin_clusterizar
+):
+    resultados["tipo_de_datos"].append(key)
+    resultados["tipo_de_solucion"].append("sin clusterizar")
+    resultados["algoritmo_de_clusterizacion"].append("ninguno")
+    resultados["costo_total"].append(sin_clusterizar[0])
+    resultados["cantidad_de_centros_de_distribucion"].append(sin_clusterizar[1])
+    resultados["tiempo_de_ejecucion"].append(sin_clusterizar[2])
+    resultados["suma_de_demanda_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_demanda_satisfecha_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_capacidad_por_cluster"].append(sin_clusterizar[5])
+    resultados["suma_de_capacidad_utilizada_por_cluster"].append(sin_clusterizar[6])
+    resultados["estado"].append(sin_clusterizar[7])
+    # x = sin_clusterizar[8]
+    # y = sin_clusterizar[9]
+    # y["cluster"] = cluster_id
+    # y["municipio"] = pd.read_csv(f"data/{key}/municipios.csv", index_col=0).loc[
+    #     value.index, "municipio"
+    # ]
+    # with pd.ExcelWriter(
+    #     f"resultados/tablas/solucionar_cflp/soluciones/{key}-sin-clusterizar.xlsx"
+    # ) as writer:
+    #     x.to_excel(writer, sheet_name="X")
+    #     y.to_excel(writer, sheet_name="Y")
+    return resultados
 
 def crear_diccionario_de_resultados():
     resultados = {
@@ -411,13 +438,13 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         costos = matriz_de_costos[key]
         print(f"Resolviendo el problema para {key}")
 
-        ####* Solución ingenua ####
-        print("    Procesando solución ingenua", end="\r")
-        ingenua = solucion_ingenua(value, key)
-        resultados = actualizar_resutados_ingenuos(resultados, key, ingenua)
-        print("    Solución ingenua procesada satisfactoriamente")
+        # ####* Solución ingenua ####
+        # print("    Procesando solución ingenua", end="\r")
+        # ingenua = solucion_ingenua(value, key)
+        # resultados = actualizar_resutados_ingenuos(resultados, key, ingenua)
+        # print("    Solución ingenua procesada satisfactoriamente")
 
-        ####* Solución sin clusterizar ####
+        # ####* Solución sin clusterizar ####
         # cluster_id = 1
         # print("    Procesando solución sin clusterizar", end="\r")
         # sin_clusterizar = solucion_cflp_MC(
@@ -436,6 +463,12 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         lista_modelos = ["kmeans", "som", "agglomerative", "dbscan"]
         for modelo in lista_modelos:
             print(f"        Procesando modelo {modelo}")
+            
+            if modelo == "bdscan" and key == "datos_completos":
+                tiempo_maximo = tiempo_maximo / 6
+            if modelo == "bdscan" and key == "datos_imperfectos":
+                tiempo_maximo = tiempo_maximo / 6
+
             resultados_de_cluster, df_y, df_x = solucion_clusterizada(
                 tiempo_maximo, key, value, costos, modelo
             )
@@ -466,13 +499,19 @@ def solucion_clusterizada(tiempo_maximo, key, value, costos, modelo):
             tiempo_limite=tiempo_maximo,
             log_path=f"resultados/logs/cflp-{key}-{modelo}-{cluster_id}.log",
         )
-        resultados_de_cluster = actualizar_resultados_sin_clusterizar(
+        resultados_de_cluster = actualizar_resultados_sin_clusterizar_a(
             resultados_de_cluster,
             key,
             cluster_value,
             cluster_id,
             cluster_solucion,
         )
+        df_y_to_add = cluster_solucion[9]
+        df_y_to_add["cluster"] = cluster_id
+        df_y_to_add["municipio"] = pd.read_csv(
+            f"data/{key}/municipios.csv", index_col=0
+        ).loc[cluster_value.index, "municipio"]
+
         df_y = df_y.combine_first(cluster_solucion[9])
         df_x = df_x.combine_first(cluster_solucion[8])
     return resultados_de_cluster, df_y, df_x

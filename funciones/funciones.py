@@ -32,42 +32,42 @@ def actualizar_resutados_ingenuos(resultados, key, ingenua):
 
 def leer_datos_solucion_cflp(comida_per_capita):
     datos_crudos = {
-        # "datos_completos": {
-        #     "poblacion": pd.read_csv(
-        #         "resultados/tablas/pronostico_poblacional/datos_completos.csv",
-        #         index_col=0,
-        #     )["Poblacion_2034"],
-        #     "demanda": pd.read_csv(
-        #         "resultados/tablas/pronostico_poblacional/datos_completos.csv",
-        #         index_col=0,
-        #     )["Poblacion_2034"].rename("demanda")
-        #     * comida_per_capita
-        #     * 7,  # 7 días de comida
-        #     "lat": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-        #         "lat"
-        #     ],
-        #     "lon": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-        #         "lon"
-        #     ],
-        #     "capacidad": pd.read_csv(
-        #         "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
-        #     )["capacidad"],
-        #     "precio": pd.read_csv(
-        #         "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
-        #     )["precio"],
-        #     "kmeans": pd.read_csv(
-        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-        #     )["kmeans"],
-        #     "som": pd.read_csv(
-        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-        #     )["som"],
-        #     "agglomerative": pd.read_csv(
-        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-        #     )["agglomerative"],
-        #     "dbscan": pd.read_csv(
-        #         "resultados/tablas/clusteres/datos_completos.csv", index_col=0
-        #     )["dbscan"],
-        # },
+        "datos_completos": {
+            "poblacion": pd.read_csv(
+                "resultados/tablas/pronostico_poblacional/datos_completos.csv",
+                index_col=0,
+            )["Poblacion_2034"],
+            "demanda": pd.read_csv(
+                "resultados/tablas/pronostico_poblacional/datos_completos.csv",
+                index_col=0,
+            )["Poblacion_2034"].rename("demanda")
+            * comida_per_capita
+            * 7,  # 7 días de comida
+            "lat": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
+                "lat"
+            ],
+            "lon": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
+                "lon"
+            ],
+            "capacidad": pd.read_csv(
+                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+            )["capacidad"],
+            "precio": pd.read_csv(
+                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+            )["precio"],
+            "kmeans": pd.read_csv(
+                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+            )["kmeans"],
+            "som": pd.read_csv(
+                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+            )["som"],
+            "agglomerative": pd.read_csv(
+                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+            )["agglomerative"],
+            "dbscan": pd.read_csv(
+                "resultados/tablas/clusteres/datos_completos.csv", index_col=0
+            )["dbscan"],
+        },
         "datos_imperfectos": {
             "poblacion": pd.read_csv(
                 "resultados/tablas/pronostico_poblacional/datos_imperfectos.csv",
@@ -108,9 +108,9 @@ def leer_datos_solucion_cflp(comida_per_capita):
         },
     }
     matriz_de_costos = {
-        # "datos_completos": pd.read_csv(
-        #     "data/datos_completos/matriz-de-costos.csv", index_col=0
-        # ),
+        "datos_completos": pd.read_csv(
+            "data/datos_completos/matriz-de-costos.csv", index_col=0
+        ),
         "datos_imperfectos": pd.read_csv(
             "data/datos_imperfectos/matriz-de-costos.csv", index_col=0
         ),
@@ -438,37 +438,35 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
         costos = matriz_de_costos[key]
         print(f"Resolviendo el problema para {key}")
 
-        # ####* Solución ingenua ####
-        # print("    Procesando solución ingenua", end="\r")
-        # ingenua = solucion_ingenua(value, key)
-        # resultados = actualizar_resutados_ingenuos(resultados, key, ingenua)
-        # print("    Solución ingenua procesada satisfactoriamente")
+        ####* Solución ingenua ####
+        print("    Procesando solución ingenua", end="\r")
+        ingenua = solucion_ingenua(value, key)
+        resultados = actualizar_resutados_ingenuos(resultados, key, ingenua)
+        print("    Solución ingenua procesada satisfactoriamente")
 
-        # ####* Solución sin clusterizar ####
-        # cluster_id = 1
-        # print("    Procesando solución sin clusterizar", end="\r")
-        # sin_clusterizar = solucion_cflp_MC(
-        #     value,
-        #     costos,
-        #     tiempo_limite=tiempo_maximo,
-        #     log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
-        # )
-        # resultados = actualizar_resultados_sin_clusterizar(
-        #     resultados, key, value, cluster_id, sin_clusterizar
-        # )
-        # print("    Solución sin clusterizar procesada satisfactoriamente")
+        ####* Solución sin clusterizar ####
+        cluster_id = 1
+        print("    Procesando solución sin clusterizar", end="\r")
+        sin_clusterizar = solucion_cflp_MC(
+            value,
+            costos,
+            tiempo_limite=tiempo_maximo,
+            log_path=f"resultados/logs/cflp-{key}-sin-clusterizar.log",
+        )
+        resultados = actualizar_resultados_sin_clusterizar(
+            resultados, key, value, cluster_id, sin_clusterizar
+        )
+        print("    Solución sin clusterizar procesada satisfactoriamente")
 
         ####* Solución clusterizada ####
         print("    Procesando solución clusterizada", end="\r")
         lista_modelos = ["kmeans", "som", "agglomerative", "dbscan"]
         for modelo in lista_modelos:
             print(f"        Procesando modelo {modelo}")
-            
             if modelo == "bdscan" and key == "datos_completos":
                 tiempo_maximo = tiempo_maximo / 6
             if modelo == "bdscan" and key == "datos_imperfectos":
-                tiempo_maximo = tiempo_maximo / 6
-
+                tiempo_maximo = tiempo_maximo / 20
             resultados_de_cluster, df_y, df_x = solucion_clusterizada(
                 tiempo_maximo, key, value, costos, modelo
             )

@@ -14,7 +14,9 @@ Este repositorio contiene el código fuente para el proyecto de integración de
 Inteligencia Artificial y Investigación de Operaciones.
 Titulado:
 > DISEÑO METODOLÓGICO PARA INTEGRACIÓN DE INVESTIGACIÓN DE OPERACIONES E INTELIGENCIA ARTIFICIAL: APOYO PARA MODELOS DE LOCALIZACIÓN-ASIGNACIÓN EN LOGÍSTICA ALIMENTARIA
+> 
 Autores:
+
 Cristian David Monsalve Alfonso (20191015148) cdmonsalvea@udistrital.edu.co
 Daniel Alejandro León Castañeda (20191015122) danalleonc@udistrital.edu.co
 ## Objetivos

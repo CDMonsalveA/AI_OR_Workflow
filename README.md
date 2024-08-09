@@ -5,9 +5,9 @@
 
     Antes de utilizar el código, se debe instalar las dependencias
     con el comando:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 
 ## Descripción
 Este repositorio contiene el código fuente para el proyecto de integración de

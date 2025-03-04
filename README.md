@@ -1,29 +1,29 @@
-# AI_OR_Integration
+# AI_OR_Workflow
 
-    AI: Artificial Intelligence
-    OR: Operations Research
+Artificial Intelligence and Operations Research Workflow is a series of modules that allow the integration of Algorithms and Models from both fields to solve a real-world problem.
 
-    Antes de utilizar el código, se debe instalar las dependencias
-    con el comando:
-```bash
-pip install -r requirements.txt
-```
+## Description
 
-## Descripción
-Este repositorio contiene el código fuente para el proyecto de integración de
-Inteligencia Artificial y Investigación de Operaciones.
-Titulado:
-> DISEÑO METODOLÓGICO PARA INTEGRACIÓN DE INVESTIGACIÓN DE OPERACIONES E INTELIGENCIA ARTIFICIAL: APOYO PARA MODELOS DE LOCALIZACIÓN-ASIGNACIÓN EN LOGÍSTICA ALIMENTARIA
-Autores:
-Cristian David Monsalve Alfonso (20191015148) cdmonsalvea@udistrital.edu.co
-Daniel Alejandro León Castañeda (20191015122) danalleonc@udistrital.edu.co
+this project contains the basis used in the monograph to achieve the degree of industrial engineer entitled:
+> [METHODOLOGICAL DESIGN FOR INTEGRATION OF OPERATIONS RESEARCH AND ARTIFICIAL INTELLIGENCE: SUPPORT FOR LOCATION-ALLOCATION MODELING IN FOOD LOGISTICS](http://hdl.handle.net/11349/92955)
+
+by:
+
+[Cristian David Monsalve Alfonso](mailto:cdmonsalvea@udistrital.edu.co) and [Daniel Alejandro León Castañeda](mailto:danalleonc@udistrital.edu.co)
+
+
+
 ## Objetivos
+
 El objetivo general de este repositorio es utilizar los datos públicos (ubicados
-en la carpeta /data/) de municipios en los que existe información para diseñar 
+en la carpeta /data/) de municipios en los que existe información para diseñar
 una estrategia para distribuir alimentos en el territorio nacional.
-### Objetivos específicos:
+
+### Objetivos específicos
+
 Existe un objetivo por cada una de las estructuras de sinergia encontradas, estas
 se pueden encontrar de manera funcional divididas en los siguientes módulos:
+
 1. pronostico_poblacional
     [IA]1. Determinar por municipio que herramienta es mejor para pronosticar
            la población en 10 años a partir del año actual.
@@ -46,9 +46,9 @@ se pueden encontrar de manera funcional divididas en los siguientes módulos:
               d. Máquinas de Vectores de Soporte || Support Vector Machine.
               e. Redes Neurales || Deep Learning.
               f. Análisis de frecuencias. [Aún está en desarrollo la idea]
-              La experimentación del caso especial de entrenamiento del modelo de pronóstico se 
+              La experimentación del caso especial de entrenamiento del modelo de pronóstico se
                 puede encontrar en el historial de archivos en la sección 3 del archivo
-                https://github.com/CDMonsalveA/AI_OR_Workflow/blob/Experimentacion-13-07/.backup/test/backup/1%2010CFLP.ipynb
+                <https://github.com/CDMonsalveA/AI_OR_Workflow/blob/Experimentacion-13-07/.backup/test/backup/1%2010CFLP.ipynb>
 4. cantidad_de_clusteres
     [IO]4. Proponer una cantidad de clusteres que permitan disminuir el costo
            computacional del algoritmo optimizador y compararlo con los métodos
@@ -61,7 +61,7 @@ se pueden encontrar de manera funcional divididas en los siguientes módulos:
               b. Mapa Autoorganizado || Self-Organizing Map.
               c. Agrupamiento Jerárquico || Agglomerative Clustering.
               d. DBSCAN.
-              La experimentación del caso especial de entrenamiento del modelo de pronóstico se 
+              La experimentación del caso especial de entrenamiento del modelo de pronóstico se
                 puede encontrar en el historial de archivos en la sección 3 del archivo
 6. solucionar_cflp
     [IO]6. Resolver el cflp para diferentes escenarios.
@@ -69,10 +69,11 @@ se pueden encontrar de manera funcional divididas en los siguientes módulos:
                  distribución).
               b. Datos completos sin clusterizar.
               c. Dividido por clústers.
-              La experimentación del caso especial de entrenamiento del modelo de pronóstico se 
+              La experimentación del caso especial de entrenamiento del modelo de pronóstico se
                 puede encontrar en el historial de archivos en la sección 3 del archivo
 
 ## Estructura de directorios
+
 El repositorio está estructurado de la siguiente manera:
 La carpeta /data/ contiene los datos públicos de los municipios en los que se
 tiene información.

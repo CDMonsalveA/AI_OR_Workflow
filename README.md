@@ -89,3 +89,6 @@ El archivo main.ipybn contiene el código principal que se encarga de llamar a
 los diferentes módulos y funciones.
 
 para este se puede configurar distintos parametros y semillas aleatorias para la experimentación de los modelos.
+
+
+Note: This README.md file is written in markdown. And uses images from [Shields.io](https://shields.io/).

@@ -16,11 +16,10 @@ by:
 
 [Cristian David Monsalve Alfonso](mailto:cdmonsalvea@udistrital.edu.co) and [Daniel Alejandro León Castañeda](mailto:danalleonc@udistrital.edu.co)
 
-## Objetivos
+### Objective
 
-El objetivo general de este repositorio es utilizar los datos públicos (ubicados
-en la carpeta /data/) de municipios en los que existe información para diseñar
-una estrategia para distribuir alimentos en el territorio nacional.
+Create a conceptual base for the integration of Operations Research and Artificial Intelligence in order aid data-driven decision-making.
+
 
 ### Objetivos específicos
 

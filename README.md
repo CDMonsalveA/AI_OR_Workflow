@@ -9,7 +9,7 @@ Artificial Intelligence and Operations Research Workflow is a series of modules 
 
 ## Description
 
-this project contains the basis used in the monograph to achieve the degree of industrial engineer entitled:
+This project contains the basis used in the monograph to achieve the degree of industrial engineer entitled:
 > [METHODOLOGICAL DESIGN FOR INTEGRATION OF OPERATIONS RESEARCH AND ARTIFICIAL INTELLIGENCE: SUPPORT FOR LOCATION-ALLOCATION MODELING IN FOOD LOGISTICS](http://hdl.handle.net/11349/92955)
 
 for the state of the repository at the time of the monograph, you can check tag [v1.0](github.com/CDMonsalveA/AI_OR_Workflow/releases/tag/v1.0)
@@ -18,9 +18,10 @@ created by:
 
 [Cristian David Monsalve Alfonso](mailto:cdmonsalvea@udistrital.edu.co) (Code and innovation) and [Daniel Alejandro León Castañeda](mailto:danalleonc@udistrital.edu.co) (Theory)
 
-### Objective
+## Objective
 
 Create a conceptual base for the integration of Operations Research and Artificial Intelligence in order aid data-driven decision-making.
+
 
 
 Note: This README.md file is written in markdown. And uses images from [Shields.io](https://shields.io/).

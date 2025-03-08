@@ -1,0 +1,22 @@
+{
+    // Editor
+    "editor.rulers": [
+        60,
+        80,
+        120
+    ],
+    // Python
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "black-formatter.args": [
+        "--line-length",
+        "80"
+    ],
+}

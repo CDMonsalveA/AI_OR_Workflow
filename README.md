@@ -1,5 +1,10 @@
 # AI_OR_Workflow
 
+[![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-370/)
+[![Jupyter](https://img.shields.io/badge/jupyter-6.4.0-blue.svg)](https://jupyter.org/)
+[![Anaconda](https://img.shields.io/badge/anaconda-2021.05-blue.svg)](https://www.anaconda.com/products/individual)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Artificial Intelligence and Operations Research Workflow is a series of modules that allow the integration of Algorithms and Models from both fields to solve a real-world problem.
 
 ## Description
@@ -10,8 +15,6 @@ this project contains the basis used in the monograph to achieve the degree of i
 by:
 
 [Cristian David Monsalve Alfonso](mailto:cdmonsalvea@udistrital.edu.co) and [Daniel Alejandro León Castañeda](mailto:danalleonc@udistrital.edu.co)
-
-
 
 ## Objetivos
 

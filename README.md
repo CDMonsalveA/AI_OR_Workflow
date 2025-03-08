@@ -2,8 +2,8 @@
 
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-370/)
 [![Jupyter](https://img.shields.io/badge/jupyter-6.4.0-blue.svg)](https://jupyter.org/)
-[![Anaconda](https://img.shields.io/badge/anaconda-2021.05-blue.svg)](https://www.anaconda.com/products/individual)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PuLP](https://img.shields.io/badge/PulP-2.5.0-blue.svg)](https://pypi.org/project/PuLP/)
 
 Artificial Intelligence and Operations Research Workflow is a series of modules that allow the integration of Algorithms and Models from both fields to solve a real-world problem.
 
@@ -22,6 +22,16 @@ created by:
 
 Create a conceptual base for the integration of Operations Research and Artificial Intelligence in order aid data-driven decision-making.
 
+## Installation
 
+<!-- TODO: #24 Make Installation Guide In The README.md -->
+
+## Usage
+
+<!-- TODO: #25 Make Usage Guide In The README.md -->
+
+## Contributing
+
+<!-- TODO: #26 Make Contributing Guide In The README.md -->
 
 Note: This README.md file is written in markdown. And uses images from [Shields.io](https://shields.io/).

@@ -18,7 +18,10 @@ Classification
 
 Regression
 
-- [ ]
+- [ ] [Multiple Linear Regression](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares)
+- [ ] [Regression Trees](https://scikit-learn.org/stable/modules/tree.html)
+- [ ] [Support Vector Regression](https://scikit-learn.org/stable/modules/svm.html#regression)
+- [ ] [Random Forest Regression](https://scikit-learn.org/stable/modules/ensemble.html#forest)
 
 Clustering
 

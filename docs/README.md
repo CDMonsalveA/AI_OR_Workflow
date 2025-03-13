@@ -25,7 +25,15 @@ Regression
 
 Clustering
 
-- [ ]
+- [ ] [K-Means](https://scikit-learn.org/stable/modules/clustering.html#k-means)
+- [ ] [Self-Organizing Maps](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#self-organizing-maps)
+- [ ] [Agglomerative Hierarchical Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering)
+- [ ] [DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
+
+Neural Networks
+
+- [ ] [MLP Regressor](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#multi-layer-perceptron)
+- [ ] [MLP Classifier](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#multi-layer-perceptron)
 
 Dimensionality Reduction
 

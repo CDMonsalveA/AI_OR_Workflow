@@ -35,11 +35,7 @@ Neural Networks
 - [ ] [MLP Regressor](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#multi-layer-perceptron)
 - [ ] [MLP Classifier](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#multi-layer-perceptron)
 
-Dimensionality Reduction
-
-- [ ]
-
 ### Operations Research
 
-- [ ] UFLP
-- [ ] CFLP
+- [ ] [UFLP](https://en.wikipedia.org/wiki/Facility_location_problem)
+- [ ] [CFLP](https://en.wikipedia.org/wiki/Facility_location_problem)

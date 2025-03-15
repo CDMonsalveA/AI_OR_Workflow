@@ -3,6 +3,7 @@ Funciones de la solución del problema de la facilidad de localización de
 centros de distribución capacitados para satisfacer la demanda de alimentos
 en los municipios.
 """
+
 import os
 import time
 import warnings
@@ -43,17 +44,19 @@ def leer_datos_solucion_cflp(comida_per_capita):
             )["Poblacion_2034"].rename("demanda")
             * comida_per_capita
             * 7,  # 7 días de comida
-            "lat": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-                "lat"
-            ],
-            "lon": pd.read_csv("data/datos_completos/municipios.csv", index_col=0)[
-                "lon"
-            ],
+            "lat": pd.read_csv(
+                "data/datos_completos/municipios.csv", index_col=0
+            )["lat"],
+            "lon": pd.read_csv(
+                "data/datos_completos/municipios.csv", index_col=0
+            )["lon"],
             "capacidad": pd.read_csv(
-                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+                "resultados/tablas/capacidad_y_costo/demanda_completa.csv",
+                index_col=0,
             )["capacidad"],
             "precio": pd.read_csv(
-                "resultados/tablas/capacidad_y_costo/demanda_completa.csv", index_col=0
+                "resultados/tablas/capacidad_y_costo/demanda_completa.csv",
+                index_col=0,
             )["precio"],
             "kmeans": pd.read_csv(
                 "resultados/tablas/clusteres/datos_completos.csv", index_col=0
@@ -79,12 +82,12 @@ def leer_datos_solucion_cflp(comida_per_capita):
             )["Poblacion_2034"].rename("demanda")
             * comida_per_capita
             * 7,  # 7 días de comida
-            "lat": pd.read_csv("data/datos_imperfectos/municipios.csv", index_col=0)[
-                "lat"
-            ],
-            "lon": pd.read_csv("data/datos_imperfectos/municipios.csv", index_col=0)[
-                "lon"
-            ],
+            "lat": pd.read_csv(
+                "data/datos_imperfectos/municipios.csv", index_col=0
+            )["lat"],
+            "lon": pd.read_csv(
+                "data/datos_imperfectos/municipios.csv", index_col=0
+            )["lon"],
             "capacidad": pd.read_csv(
                 "resultados/tablas/capacidad_y_costo/demanda_imperfecta.csv",
                 index_col=0,
@@ -171,7 +174,9 @@ def solucion_ingenua(
     suma_de_capacidad_utilizada = suma_de_demanda
     tiempo_final = time.time() - tiempo_inicial
     if suma_de_demanda > suma_de_capacidad:
-        print("        No se puede satisfacer la demanda con la capacidad instalada")
+        print(
+            "        No se puede satisfacer la demanda con la capacidad instalada"
+        )
 
     # crear el archivo de excel si no existe
     if not os.path.exists(
@@ -189,9 +194,9 @@ def solucion_ingenua(
         # añadir una columna de 1s a y con el nombre de 'cluster'
         df_y["cluster"] = 1
         # añadir una columna con el nombre del 'municipio' a y
-        df_y["municipio"] = pd.read_csv(f"data/{key}/municipios.csv", index_col=0).loc[
-            datos.index, "municipio"
-        ]
+        df_y["municipio"] = pd.read_csv(
+            f"data/{key}/municipios.csv", index_col=0
+        ).loc[datos.index, "municipio"]
         with pd.ExcelWriter(
             f"resultados/tablas/solucionar_cflp/soluciones/{key}-ingenua.xlsx"
         ) as writer:
@@ -219,9 +224,13 @@ def actualizar_resultados_sin_clusterizar(
     resultados["cantidad_de_centros_de_distribucion"].append(sin_clusterizar[1])
     resultados["tiempo_de_ejecucion"].append(sin_clusterizar[2])
     resultados["suma_de_demanda_por_cluster"].append(sin_clusterizar[4])
-    resultados["suma_de_demanda_satisfecha_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_demanda_satisfecha_por_cluster"].append(
+        sin_clusterizar[4]
+    )
     resultados["suma_de_capacidad_por_cluster"].append(sin_clusterizar[5])
-    resultados["suma_de_capacidad_utilizada_por_cluster"].append(sin_clusterizar[6])
+    resultados["suma_de_capacidad_utilizada_por_cluster"].append(
+        sin_clusterizar[6]
+    )
     resultados["estado"].append(sin_clusterizar[7])
     x = sin_clusterizar[8]
     y = sin_clusterizar[9]
@@ -236,6 +245,7 @@ def actualizar_resultados_sin_clusterizar(
         y.to_excel(writer, sheet_name="Y")
     return resultados
 
+
 def actualizar_resultados_sin_clusterizar_a(
     resultados, key, value, cluster_id, sin_clusterizar
 ):
@@ -246,9 +256,13 @@ def actualizar_resultados_sin_clusterizar_a(
     resultados["cantidad_de_centros_de_distribucion"].append(sin_clusterizar[1])
     resultados["tiempo_de_ejecucion"].append(sin_clusterizar[2])
     resultados["suma_de_demanda_por_cluster"].append(sin_clusterizar[4])
-    resultados["suma_de_demanda_satisfecha_por_cluster"].append(sin_clusterizar[4])
+    resultados["suma_de_demanda_satisfecha_por_cluster"].append(
+        sin_clusterizar[4]
+    )
     resultados["suma_de_capacidad_por_cluster"].append(sin_clusterizar[5])
-    resultados["suma_de_capacidad_utilizada_por_cluster"].append(sin_clusterizar[6])
+    resultados["suma_de_capacidad_utilizada_por_cluster"].append(
+        sin_clusterizar[6]
+    )
     resultados["estado"].append(sin_clusterizar[7])
     # x = sin_clusterizar[8]
     # y = sin_clusterizar[9]
@@ -262,6 +276,7 @@ def actualizar_resultados_sin_clusterizar_a(
     #     x.to_excel(writer, sheet_name="X")
     #     y.to_excel(writer, sheet_name="Y")
     return resultados
+
 
 def crear_diccionario_de_resultados():
     resultados = {
@@ -344,14 +359,19 @@ def solucion_cflp_MC(datos, costos, tiempo_limite=60, log_path="logs/cflp.log"):
         problema += pl.lpSum(X[i][j] for i in I) >= b[j], f"demanda_{j}"
     # restricción 2: Capacidad de almacenamiento si se abre
     for i in I:
-        problema += pl.lpSum(X[i][j] for j in J) <= a[i] * Y[i], f"capacidad_{i}"
+        problema += (
+            pl.lpSum(X[i][j] for j in J) <= a[i] * Y[i],
+            f"capacidad_{i}",
+        )
     # resolver el problema
     solver = pl.PULP_CBC_CMD(timeLimit=tiempo_limite, logPath=log_path)
     problema.solve(solver)
     tiempo_de_ejecucion = time.time() - tiempo_inicial
     # resultados
     costo_total = pl.value(problema.objective)
-    df_y = pd.DataFrame([pl.value(Y[i]) for i in I], index=datos.index, columns=["Y"])
+    df_y = pd.DataFrame(
+        [pl.value(Y[i]) for i in I], index=datos.index, columns=["Y"]
+    )
     df_x = pd.DataFrame(
         [[pl.value(X[i][j]) for j in J] for i in I],
         index=datos.index,
@@ -362,7 +382,10 @@ def solucion_cflp_MC(datos, costos, tiempo_limite=60, log_path="logs/cflp.log"):
     print("-" * 100, end="\r")
     if pl.LpStatus[problema.status] == "Optimal":
         # Revisar si se detuvo por tiempo o por óptimo
-        if solver.timeLimit is not None and solver.timeLimit <= tiempo_de_ejecucion:
+        if (
+            solver.timeLimit is not None
+            and solver.timeLimit <= tiempo_de_ejecucion
+        ):
             print("        Se detuvo por tiempo")
             estatus = "Detenido por tiempo"
         else:
@@ -484,7 +507,9 @@ def solucionar_cflp(comida_per_capita, tiempo_maximo=60 * 60):
 
 def solucion_clusterizada(tiempo_maximo, key, value, costos, modelo):
     resultados_de_cluster = crear_diccionario_de_resultados()
-    df_y = pd.DataFrame(columns=["Y", "cluster", "municipio"], index=value.index)
+    df_y = pd.DataFrame(
+        columns=["Y", "cluster", "municipio"], index=value.index
+    )
     df_x = pd.DataFrame(columns=value.index, index=value.index)
     lista_de_clusteres = value[modelo].unique()
     for cluster_id in lista_de_clusteres:
@@ -530,9 +555,13 @@ def actualizar_resultados_clusterizados(
     # suma de la demanda = suma
     suma_de_demanda = sum(resultados_de_cluster["suma_de_demanda_por_cluster"])
     # suma de la demanda por cluster = datos originales
-    suma_de_demanda_por_cluster = resultados_de_cluster["suma_de_demanda_por_cluster"]
+    suma_de_demanda_por_cluster = resultados_de_cluster[
+        "suma_de_demanda_por_cluster"
+    ]
     # suma de la capacidad = suma
-    suma_de_capacidad = sum(resultados_de_cluster["suma_de_capacidad_por_cluster"])
+    suma_de_capacidad = sum(
+        resultados_de_cluster["suma_de_capacidad_por_cluster"]
+    )
     # suma de la capacidad utilizada = datos originales
     suma_de_capacidad_utilizada = resultados_de_cluster[
         "suma_de_capacidad_utilizada_por_cluster"

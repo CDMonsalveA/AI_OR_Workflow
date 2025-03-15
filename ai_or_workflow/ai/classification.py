@@ -1,0 +1,1 @@
+"""Colection of functions for classification tasks."""

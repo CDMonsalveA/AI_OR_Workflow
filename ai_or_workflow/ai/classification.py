@@ -34,3 +34,9 @@ from sklearn.naive_bayes import (
 
 # Decision Tree Classifier
 from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
+
+# Linear Discriminant Analysis (LDA)
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
+
+# Logistic Regression
+

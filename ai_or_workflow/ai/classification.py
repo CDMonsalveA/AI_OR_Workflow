@@ -9,7 +9,9 @@ Supported models:
 - Logistic Regression
 - Support Vector Classifier (SVC)
 - K-Nearest Neighbors (KNN)
--"""
+
+- Neural Networks (MLPClassifier)
+"""
 
 # Import clasification functions
 
@@ -40,4 +42,13 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticD
 
 # Logistic Regression
 from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
+
+# Support Vector Classifier (SVC)
+from sklearn.svm import SVC, LinearSVC, NuSVC
+
+# K-Nearest Neighbors (KNN)
+from sklearn.neighbors import KNeighborsClassifier, NearestCentroid, RadiusNeighborsClassifier
+
+# Neural Networks (MLPClassifier)
+from sklearn.neural_network import MLPClassifier
 

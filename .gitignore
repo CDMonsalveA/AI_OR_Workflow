@@ -1,1 +1,4 @@
-*.log
+<<<<<<< HEAD
+=======
+funciones/__pycache__/
+>>>>>>> origin/main

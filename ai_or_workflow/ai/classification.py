@@ -39,4 +39,5 @@ from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
 
 # Logistic Regression
+from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
 
